@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-  html { direction: ltr; }
+  html { direction: rtl; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     min-height: 100vh;
@@ -20,7 +20,7 @@
     padding: 28px 16px;
     font-family: 'Vazirmatn', sans-serif;
     -webkit-font-smoothing: antialiased;
-    direction: ltr;
+    direction: rtl;
   }
   .header-label {
     display: flex; align-items: center; gap: 10px;
@@ -46,8 +46,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    direction: ltr;
-    text-align: left;
+    direction: rtl;
+    text-align: right;
   }
 
   /* Top bar - Google mobile header 48px, 14px */
@@ -188,7 +188,7 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.08);
     transition: box-shadow 0.2s, transform 0.15s;
     position: relative;
-    direction: ltr;
+    direction: rtl;
   }
   .search-box:hover { box-shadow: 0 2px 5px 1px rgba(64,60,67,0.16); }
   .search-box:focus-within { box-shadow: 0 2px 8px 1px rgba(64,60,67,0.24); border-color: transparent; }
@@ -316,11 +316,11 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.05);
     font-size: 14px; color: #202124;
     font-family: 'Vazirmatn', sans-serif;
-    direction: ltr;
+    direction: rtl;
   }
   .results-search-box .typed { flex: 1; font-size: 14px; }
   .results-stats { padding: 10px 16px 8px; font-size: 12px; color: #70757a; line-height: 16px; }
-  .result-item { padding: 12px 16px 14px; direction: ltr; text-align: left; }
+  .result-item { padding: 12px 16px 14px; direction: rtl; text-align: right; }
   .result-url {
     font-size: 12px; color: #202124; line-height: 18px;
     display: flex; align-items: center; gap: 8px;
@@ -402,7 +402,7 @@
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 32px rgba(0,0,0,0.35);
     opacity: 0;
     transform: translateY(48px) scale(0.97);
-    direction: ltr; text-align: left;
+    direction: rtl; text-align: right;
   }
   .f-card.show {
     animation: cardIn 0.62s cubic-bezier(0.16,1,0.3,1) forwards;
@@ -445,7 +445,7 @@
   .f-sub { font-family: 'Vazirmatn', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: #00e5ff; }
   .f-desc { font-family: 'Vazirmatn', sans-serif; font-size: 11.5px; line-height: 1.55; color: rgba(255,255,255,0.62); font-weight: 400; }
   .f-arrow {
-    position: absolute; top: 16px; right: 14px; left: auto;
+    position: absolute; top: 16px; left: 14px; right: auto;
     width: 26px; height: 26px; border-radius: 50%;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.10);
@@ -463,7 +463,7 @@
   .f-card.active .f-sub { color: #25D366; }
   .f-card.active .f-arrow { background: #25D366; color: #fff; border-color: #25D366; }
   .f-card .f-badge {
-    position: absolute; top: 10px; right: 48px;
+    position: absolute; top: 10px; left: 48px;
     background: #25D366; color: #fff;
     font-family: 'Vazirmatn', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.08em;
     padding: 2px 6px; border-radius: 100px;
@@ -531,7 +531,7 @@
     opacity: 0; transform: translateY(10px);
   }
   .text-scene-badge.show { animation: textIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-  .text-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 10px; direction: ltr; max-width: 320px; }
+  .text-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 10px; direction: rtl; max-width: 320px; }
   .tw {
     font-family: 'Vazirmatn', sans-serif; font-weight: 800;
     font-size: 26px; line-height: 1.25; color: #fff;
@@ -561,7 +561,7 @@
     display: none; flex-direction: column;
     background: #f8f9fa;
     overflow: hidden; isolation: isolate;
-    direction: ltr;
+    direction: rtl;
   }
   .chat-scene.show { display: flex; animation: fadeIn 0.45s ease; }
   .chat-head {
@@ -652,7 +652,7 @@
     display: none; flex-direction: column;
     background: #efeae2;
     overflow: hidden; isolation: isolate;
-    direction: ltr;
+    direction: rtl;
   }
   .conv-scene.show { display: flex; animation: fadeIn 0.4s ease; }
   .conv-bg {
@@ -717,17 +717,17 @@
     margin-top: 14px;
   }
   .msg-ai::before {
-    content: '● Bidar AI'; position: absolute; top: -16px; right: 8px;
+    content: '● هوش بیدار'; position: absolute; top: -16px; right: 8px;
     font-size: 8px; font-weight: 700; letter-spacing: 0.06em; color: #008069;
     background: rgba(220,248,198,0.95); padding: 1px 5px; border-radius: 6px;
     white-space: nowrap; line-height: 1.2;
-    direction: ltr; text-align: left;
+    direction: rtl; text-align: right;
   }
   .receipt-card {
     background: #fff; border: 1px solid #e8eaed; border-radius: 10px;
     padding: 10px 12px; margin-top: 6px;
     display: flex; flex-direction: column; gap: 6px;
-    direction: ltr; text-align: left;
+    direction: rtl; text-align: right;
   }
   .receipt-row { display: flex; justify-content: space-between; font-family: 'Vazirmatn', sans-serif; font-size: 10px; color: #5f6368; }
   .receipt-row b { color: #202124; }
@@ -748,7 +748,7 @@
     display: none; flex-direction: column;
     background: #f1f3f6;
     overflow: hidden; isolation: isolate;
-    direction: ltr;
+    direction: rtl;
   }
   .dash-scene.show { display: flex; animation: fadeIn 0.45s ease; }
   .dash-header {
@@ -819,7 +819,7 @@
     display: none; flex-direction: column;
     background: #f1f3f6;
     overflow: hidden; isolation: isolate;
-    direction: ltr;
+    direction: rtl;
   }
   .tasks-scene.show { display: flex; animation: fadeIn 0.4s ease; }
   .tasks-header {
@@ -890,7 +890,7 @@
     opacity: 0; transform: translateY(10px);
   }
   .comeback-badge.show { animation: textIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-  .comeback-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 10px; direction: ltr; max-width: 320px; }
+  .comeback-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 10px; direction: rtl; max-width: 320px; }
   .cw { font-family: 'Vazirmatn', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.3; color: #fff; opacity: 0; transform: translateY(22px) scale(0.96); text-shadow: 0 0 18px rgba(0,229,255,0.22); display: inline-block; }
   .cw.show { animation: textIn 0.55s cubic-bezier(0.16,1,0.3,1) forwards; }
   .cw.accent { color: #00e5ff; text-shadow: 0 0 16px rgba(0,229,255,0.55), 0 0 32px rgba(102,51,255,0.35); }
@@ -933,14 +933,14 @@
     opacity: 0; transform: translateY(10px);
   }
   .agent-badge.show { animation: textIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-  .agent-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px 9px; direction: ltr; max-width: 330px; }
+  .agent-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px 9px; direction: rtl; max-width: 330px; }
   /* Coach scene - like screenshot, no cat */
   .coach-scene {
     position: absolute; inset: 0;
     display: none; flex-direction: column;
     background: #fdfcfa;
     overflow: hidden; isolation: isolate;
-    direction: ltr; padding: 18px 14px 14px;
+    direction: rtl; padding: 18px 14px 14px;
     align-items: center;
   }
   .coach-scene.show { display: flex; animation: fadeIn 0.4s ease; }
@@ -969,7 +969,7 @@
     display: none; flex-direction: column;
     background: #fdfcfa;
     overflow: hidden; isolation: isolate;
-    direction: ltr;
+    direction: rtl;
   }
   .coach-answer.show { display: flex; animation: fadeIn 0.4s ease; }
   .coach-answer-header {
@@ -1020,7 +1020,7 @@
     display: none; flex-direction: column;
     background: #f1f3f6;
     overflow: hidden; isolation: isolate;
-    direction: ltr;
+    direction: rtl;
   }
   .task-detail-scene.show { display: flex; animation: fadeIn 0.4s ease; }
   .task-detail-header {
@@ -1286,10 +1286,10 @@
         <div class="splash-content">
           <div class="splash-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
           <div class="splash-bar"><div class="splash-bar-fill" id="splashFill"></div></div>
-          <div class="splash-status" id="splashStatus">Loading...</div>
+          <div class="splash-status" id="splashStatus">در حال بارگذاری...</div>
           <div class="splash-percent" id="splashPercent">0%</div>
-          <button class="splash-btn" id="splashBtn" onclick="startFromSplash()">Start with sound</button>
-          <div class="splash-hint">Tap to enable sound</div>
+          <button class="splash-btn" id="splashBtn" onclick="startFromSplash()">▶ شروع — با صدا</button>
+          <div class="splash-hint">برای فعال‌سازی صدا ضربه بزنید</div>
         </div>
       </div>
 
@@ -1321,7 +1321,7 @@
 
         <div class="loading" id="homeLoading">
           <div class="spinner"></div>
-          <span>Searching...</span>
+          <span>در حال جستجو...</span>
         </div>
         <div class="cyber-glow" aria-hidden="true"></div>
       </div>
@@ -1339,33 +1339,33 @@
             <span style="display:grid;place-items:center;width:32px;height:32px;flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22"><g fill="none" stroke-width="1.2"><path fill="#4285f4" d="M4 4h5v2H6v3H4z M20 4h-5v2h3v3h2z M4 20h5v-2H6v-3H4z M20 20h-5v-2h3v-3h2z" stroke="none"></path><circle cx="12" cy="12" r="3.2" stroke="#4285f4" fill="none"></circle><circle cx="12" cy="12" r="1.1" fill="#4285f4" stroke="none"></circle></g></svg></span>
           </div>
         </div>
-        <div class="results-stats">About 1,240 results (0.32 seconds)</div>
+        <div class="results-stats">حدود ۱٬۲۴۰ نتیجه (۰٫۳۲ ثانیه)</div>
 
         <div class="result-item" id="bidarResult" style="cursor:pointer;" onclick="clickBidarResult()">
           <div class="result-url"><span class="result-favicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#e8f0fe"></circle><text x="12" y="15.5" text-anchor="middle" font-size="11" font-family="Vazirmatn" fill="#1a73e8">B</text></svg></span> https://www.iranexpedia.ir/bidar#channels</div>
-          <div class="result-title" style="cursor:pointer;">Bidar</div>
+          <div class="result-title" style="cursor:pointer;">بیدار</div>
           <div class="result-desc" style="color:#4d5156;">
-            <span style="color:#202124; font-weight:700;">Bidar CRM; turn chats into customers</span><br>
-            RAG auto-reply for WhatsApp, Divar and Bale — capture numbers, save leads, campaigns and multi-agents in one system.
+            <span style="color:#202124; font-weight:700;">CRM بیدار؛ چت‌ها را به مشتری تبدیل کنید</span><br>
+            پاسخ خودکار مبتنی بر RAG برای واتساپ، دیوار و بله — جذب شماره، ذخیره لید، کمپین و اپراتورهای متعدد در یک سیستم.
           </div>
-          <button class="visit-btn" onclick="event.stopPropagation(); clickBidarResult()"><span class="material-icons" style="font-size:16px;">north_east</span> Visit bidar-app.ir</button>
+          <button class="visit-btn" onclick="event.stopPropagation(); clickBidarResult()"><span class="material-icons" style="font-size:16px;">north_east</span> ورود به bidar-app.ir</button>
         </div>
 
         <div class="result-item" style="border-top: 1px solid #f1f3f4;">
           <div class="result-url"><span class="result-favicon" style="background:#f1f3f4;"><svg viewBox="0 0 24 24"><path fill="#5f6368" d="M12 2L4 7v10l8 5 8-5V7z" opacity="0.2"></path><path fill="none" stroke="#5f6368" stroke-width="1.2" d="M12 2L4 7v10l8 5 8-5V7z"></path></svg></span> https://bidar-app.ir/download</div>
-          <div class="result-title">Download Bidar — Download Bidar App</div>
-          <div class="result-desc">Download the latest <b>Bidar</b> app for Android and iOS. New version with modern design and high speed.</div>
+          <div class="result-title">دانلود بیدار — Download Bidar App</div>
+          <div class="result-desc">دانلود مستقیم اپلیکیشن <b>بیدار</b> برای اندروید و iOS. نسخه جدید با طراحی مدرن و سرعت بالا.</div>
         </div>
 
         <div class="result-item" style="border-top: 1px solid #f1f3f4; opacity: 0.85;">
           <div class="result-url"><span class="result-favicon" style="background:#fff;border-color:#dadce0;"><svg viewBox="0 0 24 24"><path fill="#34a853" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2z"></path><path fill="#4285f4" d="M21 8.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5l8 5.33a2 2 0 0 0 2.22 0z"></path></svg></span> https://play.google.com/store/apps/...</div>
-          <div class="result-title">Bidar App - Apps on Google Play</div>
-          <div class="result-desc">Bidar application available on Google Play. Get it on Google Play and enjoy.</div>
+          <div class="result-title">اپلیکیشن بیدار در گوگل‌پلی</div>
+          <div class="result-desc">اپلیکیشن <b>بیدار</b> در گوگل‌پلی منتشر شد. همین حالا نصب کنید و لذت ببرید.</div>
         </div>
 
         <div class="footer">
-          <span>Iran</span>
-          <span>Help • Privacy • Terms</span>
+          <span>ایران</span>
+          <span>راهنما • حریم خصوصی • شرایط</span>
         </div>
       </div>
 
@@ -1374,63 +1374,63 @@
         <div class="cards-bg"></div>
         <div class="cards-grid-bg"></div>
         <div class="cards-header">
-          <span class="cards-header-title">Bidar • All Channels</span>
+          <span class="cards-header-title">بیدار • همه کانال‌ها</span>
           <span class="cards-header-dot"></span>
         </div>
         <div class="cards-stack" id="cardsStack">
           <!-- Card 1: Whatsapp -->
           <div class="f-card clickable" id="card1" data-channel="whatsapp" onclick="clickWhatsApp()">
-            <div class="f-badge">● Active</div>
+            <div class="f-badge">● فعال</div>
             <div class="f-icon">
               <svg viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.34A10 10 0 1 0 12 2zm4.3 14.3a6.8 6.8 0 0 1-4.3 1.5 6.8 6.8 0 0 1-3.3-.85l-.24-.14-3.03.79.81-2.95-.16-.3A6.82 6.82 0 0 1 12 5.2a6.8 6.8 0 0 1 4.82 2 6.8 6.8 0 0 1 2 4.82 6.8 6.8 0 0 1-2.02 4.83l-.5-.55zM16.6 14.1c-.2-.1-1.2-.6-1.4-.66-.2-.07-.35-.1-.5.1s-.58.66-.71.8-.27.14-.47.05a5.6 5.6 0 0 1-1.65-1.02 6.2 6.2 0 0 1-1.15-1.43c-.12-.2 0-.31.09-.42.08-.08.2-.21.29-.31.1-.1.13-.17.2-.28.07-.1.03-.2-.02-.28l-.63-1.52c-.17-.4-.35-.34-.48-.35h-.41c-.14 0-.37.05-.56.25s-.73.71-.73 1.74.75 2.02.86 2.16c.1.14 1.48 2.26 3.59 3.17.5.22.89.35 1.19.45.5.16.96.14 1.32.08.4-.06 1.2-.49 1.37-.96.17-.47.17-.87.12-.96-.05-.08-.2-.13-.4-.23z"></path></svg>
             </div>
             <div class="f-body">
-              <div class="f-title">WhatsApp</div>
-              <div class="f-sub" id="waSub">Auto RAG reply</div>
-              <div class="f-desc" id="waDesc">Direct connect, smart replies from your knowledge base, auto-save leads and numbers.</div>
+              <div class="f-title">واتساپ</div>
+              <div class="f-sub" id="waSub">پاسخ خودکار RAG</div>
+              <div class="f-desc" id="waDesc">اتصال مستقیم، پاسخ هوشمند از دانش شما، ذخیره خودکار لید و شماره.</div>
             </div>
-            <div class="f-arrow" id="waArrow">→</div>
+            <div class="f-arrow" id="waArrow">↗</div>
           </div>
           <!-- Card 2: Divar -->
           <div class="f-card clickable" id="card2" data-channel="divar" onclick="clickChannel('divar')">
-            <div class="f-badge">● Active</div>
+            <div class="f-badge">● فعال</div>
             <div class="f-icon">
               <svg viewBox="0 0 24 24" fill="white"><rect x="3" y="5" rx="2.5" width="18" height="14" fill="none" stroke="white" stroke-width="1.6"></rect><circle cx="8.2" cy="12" r="2.2" fill="white"></circle><path d="M12 8.5h5M12 11.5h5M12 14.5h3.5" stroke="white" stroke-width="1.4" stroke-linecap="round"></path></svg>
             </div>
             <div class="f-body">
-              <div class="f-title">Divar</div>
-              <div class="f-sub" id="divarSub">Chat to customer</div>
-              <div class="f-desc" id="divarDesc">Manage Divar chats, capture leads, message campaigns and operator handoff.</div>
+              <div class="f-title">دیوار</div>
+              <div class="f-sub" id="divarSub">چت → مشتری</div>
+              <div class="f-desc" id="divarDesc">مدیریت چت‌های دیوار، جذب لید، کمپین پیامکی و تحویل به اپراتور.</div>
             </div>
-            <div class="f-arrow" id="divarArrow">→</div>
+            <div class="f-arrow" id="divarArrow">↗</div>
           </div>
           <!-- Card 3: Bale -->
           <div class="f-card clickable" id="card3" data-channel="bale" onclick="clickChannel('bale')">
-            <div class="f-badge">● Active</div>
+            <div class="f-badge">● فعال</div>
             <div class="f-icon">
               <svg viewBox="0 0 24 24" fill="white"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z" fill="none" stroke="white" stroke-width="1.6" stroke-linejoin="round"></path><path d="M12 11l8-4.5M12 11v10M12 11l-8-4.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </div>
             <div class="f-body">
-              <div class="f-title">Bale</div>
-              <div class="f-sub" id="baleSub">Multiple operators</div>
-              <div class="f-desc" id="baleDesc">One inbox for all channels, multi-agent team, campaigns and full reports.</div>
+              <div class="f-title">بله</div>
+              <div class="f-sub" id="baleSub">اپراتورهای متعدد</div>
+              <div class="f-desc" id="baleDesc">یک صندوق برای همه کانال‌ها، تیم چندنفره، کمپین و گزارش کامل.</div>
             </div>
-            <div class="f-arrow" id="baleArrow">→</div>
+            <div class="f-arrow" id="baleArrow">↗</div>
           </div>
         </div>
         <!-- QR Overlay for WhatsApp -->
         <div class="qr-overlay" id="qrOverlay" onclick="if(event.target===this) closeQr()">
           <div class="qr-box" id="qrBox">
-            <div class="qr-header"><span class="qr-header-dot"></span> Connect WhatsApp</div>
+            <div class="qr-header"><span class="qr-header-dot"></span> اتصال واتساپ</div>
             <div class="qr-frame" id="qrFrame">
               <img class="qr-img" id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=bidar-wa-connect" alt="QR">
               <div class="qr-scan-line" id="qrScanLine"></div>
             </div>
-            <div class="qr-status" id="qrStatus"><span class="qr-spinner"></span> Waiting for scan...</div>
+            <div class="qr-status" id="qrStatus"><span class="qr-spinner"></span> در انتظار اسکن...</div>
             <div class="qr-success" id="qrSuccess">
               <div class="qr-success-icon">✓</div>
-              <div class="qr-success-text">Connected!</div>
-              <div class="qr-success-sub">WhatsApp activated</div>
+              <div class="qr-success-text">متصل شد!</div>
+              <div class="qr-success-sub">واتساپ فعال شد</div>
             </div>
           </div>
         </div>
@@ -1439,10 +1439,10 @@
           <div class="otp-box" id="otpBox">
             <div class="otp-header">
               <span class="otp-header-icon divar" id="otpIcon">D</span>
-              <span id="otpTitle">Connect Divar</span>
+              <span id="otpTitle">اتصال دیوار</span>
             </div>
-            <div class="otp-phone" id="otpPhone">09XX XXX 1234</div>
-            <div class="otp-hint" id="otpHint">5-digit code sent to your number</div>
+            <div class="otp-phone" id="otpPhone">0912 XXX 4821</div>
+            <div class="otp-hint" id="otpHint">کد ۵ رقمی به شماره شما ارسال شد</div>
             <div class="otp-digits" id="otpDigits">
               <div class="otp-digit" id="otp0"></div>
               <div class="otp-digit" id="otp1"></div>
@@ -1450,11 +1450,11 @@
               <div class="otp-digit" id="otp3"></div>
               <div class="otp-digit" id="otp4"></div>
             </div>
-            <div class="otp-timer" id="otpTimer"><span class="qr-spinner" id="otpSpinner" style="width:12px;height:12px;border-width:1.5px;"></span> Verifying...</div>
+            <div class="otp-timer" id="otpTimer"><span class="qr-spinner" id="otpSpinner" style="width:12px;height:12px;border-width:1.5px;"></span> در حال بررسی...</div>
             <div class="otp-success" id="otpSuccess">
               <div class="otp-success-icon divar" id="otpSuccessIcon">✓</div>
-              <div class="otp-success-text divar" id="otpSuccessText">Connected!</div>
-              <div class="qr-success-sub" id="otpSuccessSub">Channel activated successfully</div>
+              <div class="otp-success-text divar" id="otpSuccessText">متصل شد!</div>
+              <div class="qr-success-sub" id="otpSuccessSub">کانال با موفقیت فعال شد</div>
             </div>
           </div>
         </div>
@@ -1464,33 +1464,33 @@
         <div class="text-scene-bg"></div>
         <div class="text-scene-grid"></div>
         <div class="text-scene-content" id="textSceneContent">
-          <div class="text-scene-badge" id="textBadge"><span style="width:6px;height:6px;border-radius:50%;background:#00e5ff;box-shadow:0 0 6px #00e5ff;display:inline-block;"></span> Bidar • All Channels</div>
+          <div class="text-scene-badge" id="textBadge"><span style="width:6px;height:6px;border-radius:50%;background:#00e5ff;box-shadow:0 0 6px #00e5ff;display:inline-block;"></span> بیدار • همه کانال‌ها</div>
           <div class="text-words" id="textWords">
-            <span class="tw accent" data-i="0">WhatsApp</span>
-            <span class="tw" data-i="1">and</span>
-            <span class="tw accent" data-i="2">Bale</span>
-            <span class="tw" data-i="3">and</span>
-            <span class="tw accent" data-i="4">Divar</span>
-            <span class="tw" data-i="5">all</span>
-            <span class="tw" data-i="6">in</span>
-            <span class="tw glow" data-i="7">one</span>
-            <span class="tw glow" data-i="8">app</span>
-            <span class="tw" data-i="9">together</span>
-            <span class="tw" data-i="10">at last</span>
+            <span class="tw accent" data-i="0">واتساپ</span>
+            <span class="tw" data-i="1">و</span>
+            <span class="tw accent" data-i="2">بله</span>
+            <span class="tw" data-i="3">و</span>
+            <span class="tw accent" data-i="4">دیوار</span>
+            <span class="tw" data-i="5">همه</span>
+            <span class="tw" data-i="6">در</span>
+            <span class="tw glow" data-i="7">یک</span>
+            <span class="tw glow" data-i="8">اپلیکیشن</span>
+            <span class="tw" data-i="9">کنار هم</span>
+            <span class="tw" data-i="10">بالاخره</span>
           </div>
           <div class="text-underline" id="textUnderline"></div>
-          <div class="text-scene-sub" id="textSub">Centralized management with RAG auto-reply and lead capture</div>
+          <div class="text-scene-sub" id="textSub">مدیریت یکپارچه با پاسخ خودکار RAG و جذب لید</div>
         </div>
       </div>
       <!-- CHAT SCENE - inbox like reference - all channels aggregate -->
       <div class="chat-scene" id="chatScene">
         <div class="chat-head">
-          <div class="chat-head-title"><span class="chat-head-dot"></span> Bidar Inbox • All Channels</div>
+          <div class="chat-head-title"><span class="chat-head-dot"></span> صندوق بیدار • همه کانال‌ها</div>
           <div class="chat-tabs" id="chatTabs">
-            <button class="c-tab active" data-filter="all" onclick="filterChats('all')">All</button>
-            <button class="c-tab" data-filter="whatsapp" onclick="filterChats('whatsapp')">WhatsApp</button>
-            <button class="c-tab" data-filter="divar" onclick="filterChats('divar')">Divar</button>
-            <button class="c-tab" data-filter="bale" onclick="filterChats('bale')">Bale</button>
+            <button class="c-tab active" data-filter="all" onclick="filterChats('all')">همه</button>
+            <button class="c-tab" data-filter="whatsapp" onclick="filterChats('whatsapp')">واتساپ</button>
+            <button class="c-tab" data-filter="divar" onclick="filterChats('divar')">دیوار</button>
+            <button class="c-tab" data-filter="bale" onclick="filterChats('bale')">بله</button>
           </div>
         </div>
         <div class="chat-list" id="chatList">
@@ -1499,41 +1499,41 @@
       </div>
       <!-- BLANK SCENE - after clicking Aida Ahmadi -->
       <div class="blank-scene" id="blankScene" onclick="showConvScene()">
-        <span class="blank-label">Blank — Tap to open conversation</span>
+        <span class="blank-label">مکالمه آیدا — برای باز کردن بزنید</span>
       </div>
       <!-- CONVERSATION SCENE - Aida ↔ AI -->
       <div class="conv-scene" id="convScene">
         <div class="conv-bg"></div>
         <div class="conv-header">
-          <div class="conv-back">‹</div>
-          <div class="conv-avatar">A</div>
+          <div class="conv-back">›</div>
+          <div class="conv-avatar">آ</div>
           <div class="conv-head-main">
-            <div class="conv-name">Aida Ahmadi</div>
-            <div class="conv-status"><span class="conv-status-dot"></span> Bidar smart reply is active</div>
+            <div class="conv-name">آیدا احمدی</div>
+            <div class="conv-status"><span class="conv-status-dot"></span> پاسخ هوشمند بیدار فعال است</div>
           </div>
           <div class="conv-actions"><span class="material-icons" style="font-size:20px;">videocam</span><span class="material-icons" style="font-size:20px;">call</span></div>
         </div>
         <div class="conv-list" id="convList"></div>
         <div class="conv-input">
-          <div class="conv-input-field">Message Aida...</div>
+          <div class="conv-input-field">پیام به آیدا...</div>
           <button class="conv-send">➤</button>
         </div>
       </div>
       <!-- DASHBOARD SCENE - comprehensive -->
       <div class="dash-scene" id="dashScene">
         <div class="dash-header">
-          <div class="dash-title"><span class="dash-title-dot"></span> Bidar Dashboard</div>
-          <div class="dash-date">Today • Sep 9</div>
+          <div class="dash-title"><span class="dash-title-dot"></span> داشبورد بیدار</div>
+          <div class="dash-date">امروز • ۱۸ شهریور</div>
         </div>
         <div class="dash-body" id="dashBody">
           <div class="kpi-grid">
-            <div class="kpi-card clickable" id="kpiTasks" onclick="showTasksScene()"><div class="kpi-top"><span class="kpi-icon tasks">≡</span><span class="kpi-badge up">+12%</span></div><div class="kpi-value" data-target="24">0</div><div class="kpi-label">Active tasks</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#7b5cff,#00e5ff);"></div></div></div>
-            <div class="kpi-card" id="kpiLeads"><div class="kpi-top"><span class="kpi-icon leads">●</span><span class="kpi-badge up">+8%</span></div><div class="kpi-value" data-target="184">0</div><div class="kpi-label">New leads</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#ffb800,#ff7a00);"></div></div></div>
-            <div class="kpi-card" id="kpiSales"><div class="kpi-top"><span class="kpi-icon sales">✓</span><span class="kpi-badge up">+15%</span></div><div class="kpi-value" data-target="42">0</div><div class="kpi-label">Closed sales</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#25D366,#128C7E);"></div></div></div>
-            <div class="kpi-card" id="kpiIncome"><div class="kpi-top"><span class="kpi-icon income">$</span><span class="kpi-badge up">+9%</span></div><div class="kpi-value" data-target="28.4" data-suffix="M">0</div><div class="kpi-label">Revenue (Toman)</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#ff2e63,#c61a3a);"></div></div></div>
+            <div class="kpi-card clickable" id="kpiTasks" onclick="showTasksScene()"><div class="kpi-top"><span class="kpi-icon tasks">≡</span><span class="kpi-badge up">+12%</span></div><div class="kpi-value" data-target="24">0</div><div class="kpi-label">تسک‌های فعال</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#7b5cff,#00e5ff);"></div></div></div>
+            <div class="kpi-card" id="kpiLeads"><div class="kpi-top"><span class="kpi-icon leads">●</span><span class="kpi-badge up">+8%</span></div><div class="kpi-value" data-target="184">0</div><div class="kpi-label">لیدهای جدید</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#ffb800,#ff7a00);"></div></div></div>
+            <div class="kpi-card" id="kpiSales"><div class="kpi-top"><span class="kpi-icon sales">✓</span><span class="kpi-badge up">+15%</span></div><div class="kpi-value" data-target="42">0</div><div class="kpi-label">فروش نهایی</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#25D366,#128C7E);"></div></div></div>
+            <div class="kpi-card" id="kpiIncome"><div class="kpi-top"><span class="kpi-icon income">$</span><span class="kpi-badge up">+9%</span></div><div class="kpi-value" data-target="28.4" data-suffix="M">0</div><div class="kpi-label">درآمد (تومان)</div><div class="kpi-bar"><div class="kpi-bar-fill" style="background: linear-gradient(90deg,#ff2e63,#c61a3a);"></div></div></div>
           </div>
           <div class="chart-card" id="chartRevenue">
-            <div class="chart-head"><span class="chart-title">Weekly revenue</span><span class="chart-sub">Toman</span></div>
+            <div class="chart-head"><span class="chart-title">درآمد هفتگی</span><span class="chart-sub">تومان</span></div>
             <div class="chart-svg-wrap">
               <svg viewBox="0 0 300 100" preserveAspectRatio="none">
                 <defs><linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7b5cff" stop-opacity="0.28"/><stop offset="100%" stop-color="#7b5cff" stop-opacity="0"/></linearGradient></defs>
@@ -1544,25 +1544,25 @@
             </div>
           </div>
           <div class="chart-card" id="chartBars">
-            <div class="chart-head"><span class="chart-title">Leads & tasks last 6 days</span><span class="bar-legend"><span><i style="background:#7b5cff"></i>Tasks</span><span><i style="background:#ffb800"></i>Leads</span></span></div>
+            <div class="chart-head"><span class="chart-title">لید و تسک ۶ روز اخیر</span><span class="bar-legend"><span><i style="background:#7b5cff"></i>تسک</span><span><i style="background:#ffb800"></i>لید</span></span></div>
             <div class="bar-chart">
-              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="52"></div><div class="bar leads" data-h="78"></div></div><span class="bar-label">Sat</span></div>
-              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="64"></div><div class="bar leads" data-h="58"></div></div><span class="bar-label">Sun</span></div>
-              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="44"></div><div class="bar leads" data-h="72"></div></div><span class="bar-label">Mon</span></div>
-              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="70"></div><div class="bar leads" data-h="62"></div></div><span class="bar-label">Tue</span></div>
-              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="56"></div><div class="bar leads" data-h="84"></div></div><span class="bar-label">Wed</span></div>
-              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="68"></div><div class="bar leads" data-h="76"></div></div><span class="bar-label">Today</span></div>
+              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="52"></div><div class="bar leads" data-h="78"></div></div><span class="bar-label">شنبه</span></div>
+              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="64"></div><div class="bar leads" data-h="58"></div></div><span class="bar-label">یکشنبه</span></div>
+              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="44"></div><div class="bar leads" data-h="72"></div></div><span class="bar-label">دوشنبه</span></div>
+              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="70"></div><div class="bar leads" data-h="62"></div></div><span class="bar-label">سه‌شنبه</span></div>
+              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="56"></div><div class="bar leads" data-h="84"></div></div><span class="bar-label">چهارشنبه</span></div>
+              <div class="bar-group"><div class="bar-pair"><div class="bar tasks" data-h="68"></div><div class="bar leads" data-h="76"></div></div><span class="bar-label">امروز</span></div>
             </div>
           </div>
           <div class="chart-card" id="chartDonut">
-            <div class="chart-head"><span class="chart-title">Revenue by channel</span><span class="chart-sub">Share %</span></div>
+            <div class="chart-head"><span class="chart-title">درآمد به تفکیک کانال</span><span class="chart-sub">درصد سهم</span></div>
             <div class="donut-wrap">
               <div class="donut" id="donut"><div class="donut-center" id="donutCenter">100%</div></div>
               <div class="donut-legend">
-                <div class="legend-row"><span><i class="legend-dot" style="background:#25D366"></i> WhatsApp</span><b>42%</b></div>
-                <div class="legend-row"><span><i class="legend-dot" style="background:#7b5cff"></i> Divar</span><b>26%</b></div>
-                <div class="legend-row"><span><i class="legend-dot" style="background:#00e5ff"></i> Bale</span><b>17%</b></div>
-                <div class="legend-row"><span><i class="legend-dot" style="background:#ff7a00"></i> Others</span><b>15%</b></div>
+                <div class="legend-row"><span><i class="legend-dot" style="background:#25D366"></i> واتساپ</span><b>42%</b></div>
+                <div class="legend-row"><span><i class="legend-dot" style="background:#7b5cff"></i> دیوار</span><b>26%</b></div>
+                <div class="legend-row"><span><i class="legend-dot" style="background:#00e5ff"></i> بله</span><b>17%</b></div>
+                <div class="legend-row"><span><i class="legend-dot" style="background:#ff7a00"></i> سایر</span><b>15%</b></div>
               </div>
             </div>
           </div>
@@ -1571,8 +1571,8 @@
       <!-- TASKS SCENE - priority is Aida -->
       <div class="tasks-scene" id="tasksScene">
         <div class="tasks-header">
-          <div class="tasks-title"><span class="dash-title-dot"></span> Tasks</div>
-          <span class="tasks-badge">24 tasks • 3 urgent</span>
+          <div class="tasks-title"><span class="dash-title-dot"></span> تسک‌ها</div>
+          <span class="tasks-badge">۲۴ تسک • ۳ فوری</span>
         </div>
         <div class="tasks-list" id="tasksList">
           <!-- injected -->
@@ -1581,35 +1581,35 @@
       <!-- TASK DETAIL - Send parcel to Rasht -->
       <div class="task-detail-scene" id="taskDetailScene">
         <div class="task-detail-header">
-          <div class="task-detail-back" onclick="showTasksScene(true)">‹</div>
-          <div class="task-detail-title">Send parcel to Rasht</div>
-          <span class="task-detail-badge">Urgent • Today</span>
+          <div class="task-detail-back" onclick="showTasksScene(true)">›</div>
+          <div class="task-detail-title">ارسال بسته به رشت</div>
+          <span class="task-detail-badge">فوری • امروز</span>
         </div>
         <div class="task-detail-body" id="taskDetailBody">
           <div class="detail-card" id="detailCard1">
-            <div class="detail-card-head"><i style="background: linear-gradient(135deg,#25D366,#128C7E);">A</i> Aida Ahmadi • Steamer</div>
-            <div class="detail-row"><span>Product</span><b>S300 Steamer</b></div>
-            <div class="detail-row"><span>Amount</span><b>4,890,000 Toman • Paid</b></div>
-            <div class="detail-row"><span>Address</span><b>Rasht, Golsar, Nobovat St, No. 14 • 41635-34871</b></div>
-            <div class="detail-row"><span>Channel</span><b>WhatsApp</b></div>
+            <div class="detail-card-head"><i style="background: linear-gradient(135deg,#25D366,#128C7E);">آ</i> آیدا احمدی • بخارشوی</div>
+            <div class="detail-row"><span>محصول</span><b>بخارشوی S300</b></div>
+            <div class="detail-row"><span>مبلغ</span><b>4,890,000 تومان • پرداخت شد</b></div>
+            <div class="detail-row"><span>آدرس</span><b>رشت، گلسار، خیابان نوبوخت، کوچه مصطفوی، پلاک ۱۴ • 41635-34871</b></div>
+            <div class="detail-row"><span>کانال</span><b>واتساپ</b></div>
           </div>
           <div class="detail-card" id="detailCard2">
-            <div class="detail-card-head"><i style="background: #7b5cff;">≡</i> Task status</div>
+            <div class="detail-card-head"><i style="background: #7b5cff;">≡</i> وضعیت تسک</div>
             <div class="detail-timeline">
-              <div class="timeline-item"><div style="display:flex;flex-direction:column;align-items:center;"><span class="timeline-dot done"></span><span class="timeline-line"></span></div><div class="timeline-content"><div class="timeline-title">Order placed</div><div class="timeline-sub">09:33 • by Bidar AI</div></div></div>
-              <div class="timeline-item"><div style="display:flex;flex-direction:column;align-items:center;"><span class="timeline-dot done"></span><span class="timeline-line"></span></div><div class="timeline-content"><div class="timeline-title">Payment confirmed</div><div class="timeline-sub">09:35 • card to card 6037-9975</div></div></div>
-              <div class="timeline-item"><div style="display:flex;flex-direction:column;align-items:center;"><span class="timeline-dot" style="background:#ffb800;box-shadow:0 0 0 3px rgba(255,184,0,0.18)"></span></div><div class="timeline-content"><div class="timeline-title">Send parcel</div><div class="timeline-sub">Pending • delivery tomorrow</div></div></div>
+              <div class="timeline-item"><div style="display:flex;flex-direction:column;align-items:center;"><span class="timeline-dot done"></span><span class="timeline-line"></span></div><div class="timeline-content"><div class="timeline-title">سفارش ثبت شد</div><div class="timeline-sub">09:33 • توسط هوش بیدار</div></div></div>
+              <div class="timeline-item"><div style="display:flex;flex-direction:column;align-items:center;"><span class="timeline-dot done"></span><span class="timeline-line"></span></div><div class="timeline-content"><div class="timeline-title">پرداخت تایید شد</div><div class="timeline-sub">09:35 • کارت به کارت 6037-9975</div></div></div>
+              <div class="timeline-item"><div style="display:flex;flex-direction:column;align-items:center;"><span class="timeline-dot" style="background:#ffb800;box-shadow:0 0 0 3px rgba(255,184,0,0.18)"></span></div><div class="timeline-content"><div class="timeline-title">ارسال بسته</div><div class="timeline-sub">در انتظار • تحویل فردا</div></div></div>
             </div>
           </div>
           <div class="detail-card" id="detailCard3">
-            <div class="detail-card-head"><i style="background:#00e5ff;">◉</i> Actions</div>
+            <div class="detail-card-head"><i style="background:#00e5ff;">◉</i> اقدام‌ها</div>
             <div class="detail-actions">
-              <button class="detail-btn secondary" onclick="playClickSound()"><span class="material-icons" style="font-size:16px;">call</span> Call</button>
-              <button class="detail-btn primary" onclick="playConnectSuccess(); setTimeout(showComebackScene, 400)"><span class="material-icons" style="font-size:16px;">local_shipping</span> Confirm dispatch</button>
+              <button class="detail-btn secondary" onclick="playClickSound()"><span class="material-icons" style="font-size:16px;">call</span> تماس</button>
+              <button class="detail-btn primary" onclick="playConnectSuccess(); setTimeout(showComebackScene, 400)"><span class="material-icons" style="font-size:16px;">local_shipping</span> تایید ارسال</button>
             </div>
           </div>
           <div class="detail-card" style="background: transparent; border: none; box-shadow: none; padding: 0; opacity: 1; transform: none;">
-            <button class="detail-btn" style="background: rgba(123,92,255,0.12); border: 1px solid rgba(123,92,255,0.22); color: #7b5cff; width: 100%;" onclick="showComebackScene()">Continue — Bidar is back...</button>
+            <button class="detail-btn" style="background: rgba(123,92,255,0.12); border: 1px solid rgba(123,92,255,0.22); color: #7b5cff; width: 100%;" onclick="showComebackScene()">ادامه — بیدار برگشته...</button>
           </div>
         </div>
       </div>
@@ -1618,20 +1618,20 @@
         <div class="comeback-bg"></div>
         <div class="comeback-grid"></div>
         <div class="comeback-content" id="comebackContent">
-          <div class="comeback-badge" id="comebackBadge"><span style="width:6px;height:6px;border-radius:50%;background:#00e5ff;box-shadow:0 0 6px #00e5ff;display:inline-block;"></span> BIDAR 2.0 • More features</div>
+          <div class="comeback-badge" id="comebackBadge"><span style="width:6px;height:6px;border-radius:50%;background:#00e5ff;box-shadow:0 0 6px #00e5ff;display:inline-block;"></span> بیدار ۲٫۰ • امکانات بیشتر</div>
           <div class="comeback-words" id="comebackWords">
-            <span class="cw accent" data-i="0">Bidar</span>
-            <span class="cw" data-i="1">is</span>
-            <span class="cw glow" data-i="2">back</span>
+            <span class="cw accent" data-i="0">بیدار</span>
+            <span class="cw" data-i="1">برگشته</span>
+            <span class="cw glow" data-i="2">دوباره</span>
             <span class="cw" data-i="3">—</span>
-            <span class="cw" data-i="4">once</span>
-            <span class="cw" data-i="5">again</span>
-            <span class="cw" data-i="6">with</span>
-            <span class="cw accent" data-i="7">more</span>
-            <span class="cw accent" data-i="8">features</span>
+            <span class="cw" data-i="4">این‌بار</span>
+            <span class="cw" data-i="5">با</span>
+            <span class="cw" data-i="6">امکانات</span>
+            <span class="cw accent" data-i="7">بیشتر</span>
+            <span class="cw accent" data-i="8">و بهتر</span>
           </div>
           <div class="text-underline" id="comebackUnderline" style="opacity:0;"></div>
-          <div class="text-scene-sub" id="comebackSub" style="opacity:0; transform: translateY(10px);">Smarter • Faster • More complete</div>
+          <div class="text-scene-sub" id="comebackSub" style="opacity:0; transform: translateY(10px);">هوشمندتر • سریع‌تر • کامل‌تر</div>
         </div>
       </div>
       <!-- AGENT SCENE - copy with new text -->
@@ -1639,96 +1639,96 @@
         <div class="agent-bg"></div>
         <div class="agent-grid"></div>
         <div class="agent-content" id="agentContent">
-          <div class="agent-badge" id="agentBadge"><span style="width:6px;height:6px;border-radius:50%;background:#00e5ff;box-shadow:0 0 6px #00e5ff;display:inline-block;"></span> SMART AGENTS 24/7</div>
+          <div class="agent-badge" id="agentBadge"><span style="width:6px;height:6px;border-radius:50%;background:#00e5ff;box-shadow:0 0 6px #00e5ff;display:inline-block;"></span> ایجنت‌های هوشمند ۲۴/۷</div>
           <div class="agent-words" id="agentWords">
-            <span class="aw" data-i="0">Now</span>
-            <span class="aw accent" data-i="1">smart</span>
-            <span class="aw" data-i="2">agents</span>
-            <span class="aw" data-i="3">live</span>
-            <span class="aw glow" data-i="4">inside your business</span>
-            <span class="aw" data-i="5">and</span>
-            <span class="aw" data-i="6">turn</span>
-            <span class="aw accent" data-i="7">visitors</span>
-            <span class="aw" data-i="8">into</span>
-            <span class="aw" data-i="9">happy buyers</span>
-            <span class="aw" data-i="10">around</span>
-            <span class="aw glow" data-i="11">day and night</span>
-            <span class="aw glow" data-i="12">24 hours</span>
-            <span class="aw" data-i="13">every day</span>
-            <span class="aw" data-i="14">with</span>
-            <span class="aw" data-i="15">instant</span>
-            <span class="aw accent" data-i="16">replies</span>
-            <span class="aw accent" data-i="17">that close</span>
-            <span class="aw" data-i="18">every</span>
-            <span class="aw" data-i="19">deal</span>
+            <span class="aw" data-i="0">حالا</span>
+            <span class="aw accent" data-i="1">ایجنت‌های</span>
+            <span class="aw" data-i="2">هوشمند</span>
+            <span class="aw" data-i="3">داخل</span>
+            <span class="aw glow" data-i="4">کسب‌وکار شما</span>
+            <span class="aw" data-i="5">زندگی</span>
+            <span class="aw" data-i="6">می‌کنند</span>
+            <span class="aw accent" data-i="7">و بازدیدکننده‌ها</span>
+            <span class="aw" data-i="8">را</span>
+            <span class="aw" data-i="9">به مشتری خوشحال</span>
+            <span class="aw" data-i="10">تبدیل</span>
+            <span class="aw glow" data-i="11">می‌کنند شب و روز</span>
+            <span class="aw glow" data-i="12">۲۴ ساعته</span>
+            <span class="aw" data-i="13">هر روز</span>
+            <span class="aw" data-i="14">با</span>
+            <span class="aw" data-i="15">پاسخ</span>
+            <span class="aw accent" data-i="16">فوری</span>
+            <span class="aw accent" data-i="17">که معامله را</span>
+            <span class="aw" data-i="18">جوش</span>
+            <span class="aw" data-i="19">می‌دهد</span>
           </div>
           <div class="text-underline" id="agentUnderline" style="opacity:0;"></div>
-          <div class="text-scene-sub" id="agentSub" style="opacity:0; transform: translateY(10px);">No holidays • instant replies • automatic sales</div>
+          <div class="text-scene-sub" id="agentSub" style="opacity:0; transform: translateY(10px);">بدون تعطیلی • پاسخ لحظه‌ای • فروش خودکار</div>
         </div>
       </div>
       <!-- COACH SCENE - like screenshot, no cat -->
       <div class="coach-scene" id="coachScene">
-        <div class="coach-prompt" id="coachPrompt">Ask Mr. Mewjin...</div>
+        <div class="coach-prompt" id="coachPrompt">از آقای میوژن بپرس...</div>
         <div class="coach-list" id="coachList">
-          <div class="coach-card" data-i="0">Give me today's summary</div>
-          <div class="coach-card" data-i="1">Which operator is more efficient?</div>
-          <div class="coach-card selected" data-i="2" id="coachHotLeads" onclick="showCoachAnswer()" style="cursor:pointer;">Which leads are most likely to buy today?</div>
-          <div class="coach-card" data-i="3">Which need human help or risk being lost?</div>
-          <div class="coach-card" data-i="4">Create a task for the hottest lead</div>
-          <div class="coach-card" data-i="5">Draft a message for the hottest lead</div>
+          <div class="coach-card" data-i="0">خلاصه امروز رو بده</div>
+          <div class="coach-card" data-i="1">کدوم اپراتور بازده بیشتری داره؟</div>
+          <div class="coach-card selected" data-i="2" id="coachHotLeads" onclick="showCoachAnswer()" style="cursor:pointer;">کدوم لیدها امروز احتمال خرید بیشتری دارن؟</div>
+          <div class="coach-card" data-i="3">کدوم‌ها نیاز به کمک انسانی دارن یا در خطر از دست رفتنن؟</div>
+          <div class="coach-card" data-i="4">برای داغ‌ترین لید یه تسک بساز</div>
+          <div class="coach-card" data-i="5">برای داغ‌ترین لید یه پیام آماده کن</div>
         </div>
       </div>
       <!-- COACH ANSWER - AI response for hot leads -->
       <div class="coach-answer" id="coachAnswer">
         <div class="coach-answer-header">
-          <div class="coach-answer-avatar">M</div>
+          <div class="coach-answer-avatar">م</div>
           <div style="flex:1;">
-            <div class="coach-answer-title">Mr. Mewjin • Lead analysis</div>
-            <div class="coach-answer-sub">3 high-potential leads found</div>
+            <div class="coach-answer-title">آقای میوژن • تحلیل لید</div>
+            <div class="coach-answer-sub">۳ لید با پتانسیل بالا پیدا شد</div>
           </div>
           <span class="material-icons" style="font-size:18px;color:#5f6368;">auto_awesome</span>
         </div>
-        <div id="coachThinkingLine" class="thinking-line"><span style="width:6px;height:6px;border-radius:50%;background:#7b5cff;box-shadow:0 0 6px #7b5cff;display:inline-block;flex-shrink:0;"></span><span id="thinkingText" class="thinking-text">Mewjin is thinking...</span></div>
+        <div id="coachThinkingLine" class="thinking-line"><span style="width:6px;height:6px;border-radius:50%;background:#7b5cff;box-shadow:0 0 6px #7b5cff;display:inline-block;flex-shrink:0;"></span><span id="thinkingText" class="thinking-text">میوژن در حال فکر کردن...</span></div>
         <div class="coach-answer-body" id="coachAnswerBody">
-          <div class="answer-bubble" id="coachBubble">Based on last 48h behavior and message analysis, these 3 leads are most likely to convert.</div>
-          <div class="lead-rank" id="lead1"><span class="lead-rank-num top">1</span><div class="lead-rank-main"><div class="lead-rank-name">Fatemeh Falahi • asked for discount</div><div class="lead-rank-meta">Divar • asked if discount available</div><div class="lead-rank-bar"><div class="lead-rank-fill high" style="width:91%"></div></div></div><span class="lead-rank-score">91%</span></div>
-          <div class="lead-rank" id="lead2"><span class="lead-rank-num">2</span><div class="lead-rank-main"><div class="lead-rank-name">Golnar Moradi • Bale</div><div class="lead-rank-meta">Bale • fast replies</div><div class="lead-rank-bar"><div class="lead-rank-fill mid" style="width:88%"></div></div></div><span class="lead-rank-score" style="color:#7b5cff;">88%</span></div>
-          <div class="lead-rank" id="lead3"><span class="lead-rank-num">3</span><div class="lead-rank-main"><div class="lead-rank-name">Matin Bagheri • Divar</div><div class="lead-rank-meta">Divar • in-person visit</div><div class="lead-rank-bar"><div class="lead-rank-fill low" style="width:84%"></div></div></div><span class="lead-rank-score" style="color:#ff7a00;">84%</span></div>
-          <div class="answer-bubble" id="coachSuggest" style="background:#eef7ff; border-color:#90caf9; display:none;">My suggestion: call now — <b>Fatemeh Falahi</b> asked for a discount and is 91% ready to buy. One call can close it.</div>
-          <div class="answer-bubble" id="coachUserBale" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:52%; text-align:center;">Bale</div>
-          <div class="answer-bubble" id="coachDraft" style="background:#fffbeb; border-color:#f5d76e; display:none;">Sure — here is a draft for Fatemeh:<br><br>Hello dear Ms. Falahi, for your purchase we have considered a <b>12% special discount</b> just for you. If you order before 6pm today, dispatch is tomorrow. Shall I reserve it for you?<br><br><span style="font-size:10px;color:#8d7a6a;">Short, friendly tone with clear call to action</span></div>
-          <div class="answer-bubble" id="coachQPlatform" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:78%;">On which platform did we sell more?</div>
+          <div class="answer-bubble" id="coachBubble">بر اساس رفتار ۴۸ ساعت اخیر و تحلیل پیام‌ها، این ۳ لید بیشترین احتمال خرید رو دارن.</div>
+          <div class="lead-rank" id="lead1"><span class="lead-rank-num top">1</span><div class="lead-rank-main"><div class="lead-rank-name">فاطمه فلاحی • تخفیف خواست</div><div class="lead-rank-meta">دیوار • پرسید تخفیف داره؟</div><div class="lead-rank-bar"><div class="lead-rank-fill high" style="width:91%"></div></div></div><span class="lead-rank-score">91%</span></div>
+          <div class="lead-rank" id="lead2"><span class="lead-rank-num">2</span><div class="lead-rank-main"><div class="lead-rank-name">گلنار مرادی • بله</div><div class="lead-rank-meta">بله • پاسخ‌های سریع</div><div class="lead-rank-bar"><div class="lead-rank-fill mid" style="width:88%"></div></div></div><span class="lead-rank-score" style="color:#7b5cff;">88%</span></div>
+          <div class="lead-rank" id="lead3"><span class="lead-rank-num">3</span><div class="lead-rank-main"><div class="lead-rank-name">متین باقری • دیوار</div><div class="lead-rank-meta">دیوار • بازدید حضوری</div><div class="lead-rank-bar"><div class="lead-rank-fill low" style="width:84%"></div></div></div><span class="lead-rank-score" style="color:#ff7a00;">84%</span></div>
+          <div class="answer-bubble" id="coachSuggest" style="background:#eef7ff; border-color:#90caf9; display:none;">پیشنهاد من: همین حالا زنگ بزن — <b>فاطمه فلاحی</b> تخفیف خواسته و ۹۱٪ آماده خریده. یه تماس می‌تونه کار رو تموم کنه.</div>
+          <div class="answer-bubble" id="coachUserBale" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:52%; text-align:center;">بله</div>
+          <div class="answer-bubble" id="coachDraft" style="background:#fffbeb; border-color:#f5d76e; display:none;">حتماً — این پیش‌نویس برای فاطمه:<br><br>سلام خانم فلاحی عزیز، برای خرید شما <b>۱۲٪ تخفیف ویژه</b> در نظر گرفتیم. اگه تا ساعت ۱۸ امروز سفارش بدید، ارسال فرداست. رزرو کنم براتون؟<br><br><span style="font-size:10px;color:#8d7a6a;">لحن کوتاه و صمیمی با دعوت به اقدام مشخص</span></div>
+          <div class="answer-bubble" id="coachQPlatform" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:78%;">توی کدوم پلتفرم بیشتر فروختیم؟</div>
           <div class="answer-bubble" id="coachAPlatform" style="display:none;">
-            60% of customers bought on <b>Bale</b>, 35% on <b>WhatsApp</b> and 5% on <b>Divar</b>.<br><br>
-            People seem to trust <b>Bale and WhatsApp</b> more, but <b>Divar brought more new visitors into the funnel.</b>
+            ۶۰٪ مشتری‌ها توی <b>بله</b> خریدن، ۳۵٪ توی <b>واتساپ</b> و ۵٪ توی <b>دیوار</b>.<br><br>
+            به نظر می‌رسه مردم به <b>بله و واتساپ</b> بیشتر اعتماد می‌کنن، ولی <b>دیوار بازدیدکننده جدید بیشتری وارد قیف کرده.</b>
             <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px;">
-              <div style="display:flex; align-items:center; gap:6px; font-size:10px;"><span style="width:36px;text-align:left;">Bale</span><div style="flex:1; height:8px; background:#f1f3f4; border-radius:10px; overflow:hidden;"><div id="platBale" style="height:100%; width:0%; background:linear-gradient(90deg,#00e5ff,#7b5cff); border-radius:10px; transition:width 0.9s cubic-bezier(0.16,1,0.3,1);"></div></div><b style="width:28px;">60%</b></div>
-              <div style="display:flex; align-items:center; gap:6px; font-size:10px;"><span style="width:36px;text-align:left;">WhatsApp</span><div style="flex:1; height:8px; background:#f1f3f4; border-radius:10px; overflow:hidden;"><div id="platWa" style="height:100%; width:0%; background:linear-gradient(90deg,#25D366,#128C7E); border-radius:10px; transition:width 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s;"></div></div><b style="width:28px;">35%</b></div>
-              <div style="display:flex; align-items:center; gap:6px; font-size:10px;"><span style="width:36px;text-align:left;">Divar</span><div style="flex:1; height:8px; background:#f1f3f4; border-radius:10px; overflow:hidden;"><div id="platDivar" style="height:100%; width:0%; background:linear-gradient(90deg,#ff7a00,#ff2e63); border-radius:10px; transition:width 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s;"></div></div><b style="width:28px;">5%</b></div>
+              <div style="display:flex; align-items:center; gap:6px; font-size:10px;"><span style="width:36px;text-align:right;">بله</span><div style="flex:1; height:8px; background:#f1f3f4; border-radius:10px; overflow:hidden;"><div id="platBale" style="height:100%; width:0%; background:linear-gradient(90deg,#00e5ff,#7b5cff); border-radius:10px; transition:width 0.9s cubic-bezier(0.16,1,0.3,1);"></div></div><b style="width:28px;">60%</b></div>
+              <div style="display:flex; align-items:center; gap:6px; font-size:10px;"><span style="width:36px;text-align:right;">واتساپ</span><div style="flex:1; height:8px; background:#f1f3f4; border-radius:10px; overflow:hidden;"><div id="platWa" style="height:100%; width:0%; background:linear-gradient(90deg,#25D366,#128C7E); border-radius:10px; transition:width 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s;"></div></div><b style="width:28px;">35%</b></div>
+              <div style="display:flex; align-items:center; gap:6px; font-size:10px;"><span style="width:36px;text-align:right;">دیوار</span><div style="flex:1; height:8px; background:#f1f3f4; border-radius:10px; overflow:hidden;"><div id="platDivar" style="height:100%; width:0%; background:linear-gradient(90deg,#ff7a00,#ff2e63); border-radius:10px; transition:width 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s;"></div></div><b style="width:28px;">5%</b></div>
             </div>
           </div>
-          <div class="answer-bubble" id="coachQMalaysia" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:84%;">How do we sell 100 Malaysia tours next month?</div>
+          <div class="answer-bubble" id="coachQMalaysia" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:84%;">چطور ماه بعد صدتا تور مالزی بفروشیم؟</div>
           <div class="answer-bubble" id="coachAMalaysia" style="display:none;">
-            To sell 100 Malaysia tours, I suggest this sales funnel:<br><br>
-            1️⃣ Post an attractive video about a stunning Malaysia spot (e.g. Perhentian islands) on your website<br>
-            2️⃣ Share its teaser on social networks<br>
-            3️⃣ In every post you publish, the CTA is <b>Book Malaysia tour</b><br>
-            4️⃣ Run ads on <b>Divar and Bale</b><br>
-            5️⃣ On <b>WhatsApp run a campaign</b> for everyone who traveled to Southeast Asia before or asked about these countries<br><br>
-            Give me the details and I will build the campaign now.
+            برای فروش صدتا تور مالزی، این قیف فروش رو پیشنهاد می‌کنم:<br><br>
+            1️⃣ یه ویدیوی جذاب از یه نقطه بکر مالزی (مثلاً جزایر پرهنتیان) توی سایتت بذار<br>
+            2️⃣ تیزرش رو توی شبکه‌های اجتماعی پخش کن<br>
+            3️⃣ توی هر پستی که منتشر می‌کنی، دعوت به اقدام <b>رزرو تور مالزی</b> باشه<br>
+            4️⃣ توی <b>دیوار و بله</b> تبلیغات بزن<br>
+            5️⃣ توی <b>واتساپ کمپین بزن</b> برای همه کسایی که قبلاً به جنوب شرق آسیا سفر کردن یا درباره این کشورها پرسیدن<br><br>
+            جزئیات رو بده تا همین حالا کمپین رو بسازم.
           </div>
-          <div class="answer-bubble" id="coachUserMalaysiaYes" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:42%; text-align:center;">Yes, build it</div>
-          <div class="answer-bubble" id="coachThinking" style="background:#f3f0ff; border-color:#b39ddb; display:none; font-style:italic;">Mewjin is thinking...</div>
-          <div class="answer-bubble" id="coachBuilding" style="display:none;">Building campaign... <span class="typing-dots"><span></span><span></span><span></span></span></div>
-          <div class="answer-bubble" id="coachFound" style="background:#fffbeb; border-color:#f5d76e; display:none;">Found 248 leads — many had not heard from you since their purchase. No worries, we win them back with one <b>cold-start</b> message.</div>
+          <div class="answer-bubble" id="coachUserMalaysiaYes" style="align-self:flex-end; background:#e8f0fe; border:1px solid #90caf9; display:none; max-width:42%; text-align:center;">آره، بساز</div>
+          <div class="answer-bubble" id="coachThinking" style="background:#f3f0ff; border-color:#b39ddb; display:none; font-style:italic;">میوژن در حال فکر کردن...</div>
+          <div class="answer-bubble" id="coachBuilding" style="display:none;">در حال ساخت کمپین... <span class="typing-dots"><span></span><span></span><span></span></span></div>
+          <div class="answer-bubble" id="coachFound" style="background:#fffbeb; border-color:#f5d76e; display:none;">۲۴۸ لید پیدا شد — خیلی‌هاشون از بعد خرید ازت خبری نداشتن. اشکالی نداره، با یه پیام <b>شروع سرد</b> برشون می‌گردونیم.</div>
           <div class="answer-bubble" id="coachCampaignDone" style="background:#e6f4ff; border-color:#90caf9; display:none;">
-            <b>Malaysia tour campaign built • 248 leads</b><br>
+            <b>کمپین تور مالزی ساخته شد • ۲۴۸ لید</b><br>
             <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
-              <span style="background:#e6f4ea; border:1px solid #ceead6; color:#137333; padding:3px 8px; border-radius:100px; font-size:10px;">WhatsApp 142</span>
-              <span style="background:#e6f4ff; border:1px solid #c2e0ff; color:#0b57d0; padding:3px 8px; border-radius:100px; font-size:10px;">Bale 81</span>
-              <span style="background:#ffe8ed; border:1px solid #f8d0d8; color:#c61a3a; padding:3px 8px; border-radius:100px; font-size:10px;">Divar 25</span>
+              <span style="background:#e6f4ea; border:1px solid #ceead6; color:#137333; padding:3px 8px; border-radius:100px; font-size:10px;">واتساپ 142</span>
+              <span style="background:#e6f4ff; border:1px solid #c2e0ff; color:#0b57d0; padding:3px 8px; border-radius:100px; font-size:10px;">بله 81</span>
+              <span style="background:#ffe8ed; border:1px solid #f8d0d8; color:#c61a3a; padding:3px 8px; border-radius:100px; font-size:10px;">دیوار 25</span>
             </div>
-            <div style="margin-top:6px; font-size:10px; color:#5f6368;">Messages will be sent on WhatsApp, Bale and Divar</div>
+            <div style="margin-top:6px; font-size:10px; color:#5f6368;">پیام‌ها در واتساپ، بله و دیوار ارسال می‌شن</div>
           </div>
         </div>
       </div>
@@ -1869,14 +1869,14 @@
 
   // === Chat scene data - diverse real messages per channel ===
   const chatData = [
-    { name: 'Arash Mozaffari', date: 'Sep 9', text: 'You: invoice #2300 sent', channel: 'whatsapp', letter: 'A', selected: true },
-    { name: 'Matin Bagheri', date: 'Sep 9', text: 'Hi, Pride 1398 — still available?', channel: 'divar', letter: 'M' },
-    { name: 'Aida Ahmadi', date: 'Sep 9', text: 'Please send the contract on Bale', channel: 'bale', letter: 'A' },
-    { name: 'Mehdi Takallou', date: 'Sep 9', text: 'Order placed, when will it ship?', channel: 'whatsapp', letter: 'M' },
-    { name: 'Arash Sadeghi', date: 'Sep 9', text: 'In-person visit today at 5pm confirmed', channel: 'divar', letter: 'A' },
-    { name: 'Golnar Moradi', date: 'Sep 9', text: 'Support: verification code 48219 sent', channel: 'bale', letter: 'G' },
-    { name: 'Mojtaba Najafi', date: 'Sep 9', text: 'Card number for the refund please', channel: 'whatsapp', letter: 'M' },
-    { name: 'Fatemeh Falahi', date: 'Sep 8', text: 'Any discount? Last price please', channel: 'divar', letter: 'F' },
+    { name: 'آرش مظفری', date: '۱۸ شهریور', text: 'شما: فاکتور ۲۳۰۰ ارسال شد', channel: 'whatsapp', letter: 'آ', selected: true },
+    { name: 'متین باقری', date: '۱۸ شهریور', text: 'سلام، پراید ۹۸ هنوز موجوده؟', channel: 'divar', letter: 'م' },
+    { name: 'آیدا احمدی', date: '۱۸ شهریور', text: 'لطفاً قرارداد رو توی بله بفرستید', channel: 'bale', letter: 'آ' },
+    { name: 'مهدی تکلو', date: '۱۸ شهریور', text: 'سفارش ثبت شد، کی ارسال میشه؟', channel: 'whatsapp', letter: 'م' },
+    { name: 'آرش صادقی', date: '۱۸ شهریور', text: 'بازدید حضوری امروز ساعت ۵ تایید شد', channel: 'divar', letter: 'آ' },
+    { name: 'گلنار مرادی', date: '۱۸ شهریور', text: 'پشتیبانی: کد تایید 48219 ارسال شد', channel: 'bale', letter: 'گ' },
+    { name: 'مجتبی نجفی', date: '۱۸ شهریور', text: 'لطفاً شماره کارت برای استرداد', channel: 'whatsapp', letter: 'م' },
+    { name: 'فاطمه فلاحی', date: '۱۷ شهریور', text: 'تخفیف داره؟ قیمت آخر لطفاً', channel: 'divar', letter: 'ف' },
   ];
 
   async function showBlankScene() {
@@ -1911,11 +1911,11 @@
 
   // === Dashboard helpers ===
   const tasksData = [
-    { title: 'Send parcel to Rasht', sub: 'Aida Ahmadi • S300 Steamer • payment confirmed', priority: true, tag: 'Urgent', channel: 'whatsapp', done: false },
-    { title: 'Follow up Divar lead', sub: 'Matin Bagheri • Pride 1398', priority: false, tag: 'Today', channel: 'divar', done: false },
-    { title: 'Send contract on Bale', sub: 'Aida Ahmadi • Steamer', priority: false, tag: 'Bale', channel: 'bale', done: false },
-    { title: 'Reply to quote request', sub: 'Fatemeh Falahi • Divar', priority: false, tag: 'Tomorrow', channel: 'divar', done: false },
-    { title: 'Confirm refund & place order', sub: 'Mojtaba Najafi • WhatsApp', priority: false, tag: 'WhatsApp', channel: 'whatsapp', done: true },
+    { title: 'ارسال بسته به رشت', sub: 'آیدا احمدی • بخارشوی S300 • پرداخت تایید شد', priority: true, tag: 'فوری', channel: 'whatsapp', done: false },
+    { title: 'پیگیری لید دیوار', sub: 'متین باقری • پراید ۹۸', priority: false, tag: 'امروز', channel: 'divar', done: false },
+    { title: 'ارسال قرارداد در بله', sub: 'آیدا احمدی • بخارشوی', priority: false, tag: 'بله', channel: 'bale', done: false },
+    { title: 'پاسخ به درخواست قیمت', sub: 'فاطمه فلاحی • دیوار', priority: false, tag: 'فردا', channel: 'divar', done: false },
+    { title: 'تایید استرداد و ثبت سفارش', sub: 'مجتبی نجفی • واتساپ', priority: false, tag: 'واتساپ', channel: 'whatsapp', done: true },
   ];
   async function showTasksScene(fromDetail) {
     if (!fromDetail) { ensureAudio(); playClickSound(); const kpi=document.getElementById('kpiTasks'); if(kpi) flashPress(kpi); }
@@ -1932,7 +1932,7 @@
       el.className = 'task-item' + (t.priority ? ' priority' : '');
       el.style.animationDelay = (i*0.08)+'s';
       if (t.priority) { el.style.cursor='pointer'; el.onclick = ()=> { flashPress(el); showTaskDetail(); }; }
-      el.innerHTML = `<div class="task-check ${t.done?'done':''}">${t.done?'✓':''}</div><div class="task-main"><div class="task-title">${t.title}</div><div class="task-sub">${t.sub}</div><div class="task-meta"><span class="task-tag ${t.priority?'priority':'wa'}">${t.tag}</span><span class="task-tag date">${t.channel==='whatsapp'?'WhatsApp':t.channel==='divar'?'Divar':'Bale'}</span></div></div>`;
+      el.innerHTML = `<div class="task-check ${t.done?'done':''}">${t.done?'✓':''}</div><div class="task-main"><div class="task-title">${t.title}</div><div class="task-sub">${t.sub}</div><div class="task-meta"><span class="task-tag ${t.priority?'priority':'wa'}">${t.tag}</span><span class="task-tag date">${t.channel==='whatsapp'?'واتساپ':t.channel==='divar'?'دیوار':'بله'}</span></div></div>`;
       list.appendChild(el);
     });
     requestAnimationFrame(()=> [...list.children].forEach((ch,idx)=> setTimeout(()=>{ ch.classList.add('show'); if(soundOn&&audioCtx){ const tt=audioCtx.currentTime; const o=audioCtx.createOscillator(), g=audioCtx.createGain(); o.frequency.value=540+idx*38; g.gain.setValueAtTime(0.05,tt); g.gain.exponentialRampToValueAtTime(0.001,tt+0.24); o.connect(g); g.connect(audioCtx.destination); o.start(tt); o.stop(tt+0.25); } }, idx*85)));
@@ -2068,7 +2068,7 @@
     // AI thinking - same line at top, sentences cycle
     const thinkingLine = document.getElementById('coachThinkingLine');
     const thinkingText = document.getElementById('thinkingText');
-    const sentences = ["Mewjin is thinking...", "Building campaign...", "248 leads found - reviewing..."];
+    const sentences = ["میوژن در حال فکر کردن...", "در حال ساخت کمپین...", "۲۴۸ لید پیدا شد — در حال بررسی..."];
     thinkingLine.classList.add('show'); thinkingLine.style.display='flex';
     for(let s=0; s<sentences.length; s++){
       thinkingText.textContent = sentences[s];
@@ -2208,18 +2208,18 @@
 
   // === Conversation - Aida ↔ AI knowledgeable - closing deal ===
   const convMessages = [
-    { from: 'aida', text: 'Hello, good time. For our boutique we need a good standing steamer — do you have anything in stock?', time: '09:31' },
-    { from: 'ai', text: 'Hello dear Aida, good time to you too. Yes — the Bidar S300 standing steamer is available, 2L tank, perfect for a boutique with 20 outfits a day. We have 4 in Tehran stock right now.', time: '09:31' },
-    { from: 'aida', text: 'Great, what is the price? Do you have installments?', time: '09:32' },
-    { from: 'ai', text: 'Price is 4,890,000 Toman. For you 4-month installments with no interest, monthly 1,222,000. Dispatch to Rasht goes out tomorrow morning.', time: '09:32' },
-    { from: 'aida', text: 'How about the warranty?', time: '09:33' },
-    { from: 'ai', text: '18-month Bidar warranty + 5 years after-sales service. I will also send a video tutorial. Shall I place the order?', time: '09:33' },
-    { from: 'aida', text: 'Yes please, how do I pay?', time: '09:33' },
-    { from: 'ai', text: 'Dear Aida, please card-to-card 4,890,000 Toman to:\n\nCard 6037-9975-8342-1568\nName: Bidar - Mohammad Hosseini\n\nEnjoy, shipping is on us. For dispatch please send your full address here (province, city, street, no., postal code) so I can register it.', time: '09:34' },
-    { from: 'aida', text: 'Rasht, Golsar, Nobovat St, Mostafavi dead-end, No. 14, Unit 3, postal 41635-34871', time: '09:34' },
-    { from: 'ai', text: 'Perfect, your address is saved. Waiting for the payment receipt. After transfer please send the receipt photo here.', time: '09:34' },
-    { from: 'aida', receipt: true, text: 'Transferred, here is the receipt', time: '09:35' },
-    { from: 'ai', text: 'Receipt received dear Aida. Checked and confirmed. Payment verified. Will pack within 10 minutes, then I will text you the tracking code. Congrats — enjoy using it!', time: '09:35' },
+    { from: 'aida', text: 'سلام، وقت بخیر. برای مزونمون یه بخارشوی ایستاده خوب می‌خوایم — موجود دارید؟', time: '09:31' },
+    { from: 'ai', text: 'سلام آیدای عزیز، وقت شما هم بخیر. بله — بخارشوی ایستاده بیدار S300 موجوده، مخزن ۲ لیتری، عالی برای مزون با روزی ۲۰ دست لباس. همین حالا ۴ عدد توی انبار تهران داریم.', time: '09:31' },
+    { from: 'aida', text: 'عالیه، قیمتش چنده؟ شرایطی هم دارید؟', time: '09:32' },
+    { from: 'ai', text: 'قیمتش 4,890,000 تومانه. برای شما ۴ ماهه بدون بهره، ماهی 1,222,000. ارسال به رشت فردا صبح میره.', time: '09:32' },
+    { from: 'aida', text: 'گارانتیش چطوره؟', time: '09:33' },
+    { from: 'ai', text: '۱۸ ماه گارانتی بیدار + ۵ سال خدمات پس از فروش. فیلم آموزش هم می‌فرستم. سفارش رو ثبت کنم؟', time: '09:33' },
+    { from: 'aida', text: 'بله لطفاً، چطور پرداخت کنم؟', time: '09:33' },
+    { from: 'ai', text: 'آیدا جان، لطفاً 4,890,000 تومان کارت به کارت کنید به:\n\nکارت 6037-9975-8342-1568\nبه نام: بیدار - محمد حسینی\n\nقابل شما رو نداره، ارسال هم با ماست. برای ارسال لطفاً آدرس کاملتون رو همین‌جا بفرستید (استان، شهر، خیابان، پلاک، کدپستی) تا ثبت کنم.', time: '09:34' },
+    { from: 'aida', text: 'رشت، گلسار، خیابان نوبوخت، کوچه مصطفوی، پلاک ۱۴، واحد ۳، کدپستی 41635-34871', time: '09:34' },
+    { from: 'ai', text: 'عالیه، آدرستون ذخیره شد. منتظر رسید پرداختم. بعد از واریز لطفاً عکس رسید رو همین‌جا بفرستید.', time: '09:34' },
+    { from: 'aida', receipt: true, text: 'واریز کردم، اینم رسید', time: '09:35' },
+    { from: 'ai', text: 'رسید رو گرفتم آیدا جان. بررسی و تایید شد. پرداختتون نشست. تا ۱۰ دقیقه دیگه بسته‌بندی می‌کنم، بعد کد رهگیری رو براتون می‌فرستم. مبارکتون باشه — به خوشی استفاده کنید!', time: '09:35' },
   ];
   let convBusy = false;
   async function showConvScene() {
@@ -2261,7 +2261,7 @@
       el.className = 'msg ' + (m.from==='aida' ? 'msg-aida' : 'msg-ai');
       let inner = m.text.replace(/\n/g,'<br>');
       if (m.receipt) {
-        inner += `<div class="receipt-card"><div class="receipt-check">✓</div><div class="receipt-row"><span>Amount</span><b>4,890,000 Toman</b></div><div class="receipt-row"><span>To</span><b>6037-9975-8342-1568</b></div><div class="receipt-row"><span>Time</span><b>09:35 • Paid</b></div><div class="receipt-amount">Payment receipt</div></div>`;
+        inner += `<div class="receipt-card"><div class="receipt-check">✓</div><div class="receipt-row"><span>مبلغ</span><b>4,890,000 تومان</b></div><div class="receipt-row"><span>به</span><b>6037-9975-8342-1568</b></div><div class="receipt-row"><span>زمان</span><b>09:35 • پرداخت شد</b></div><div class="receipt-amount">رسید پرداخت</div></div>`;
       }
       el.innerHTML = `${inner}<div class="msg-time">${m.time} ${m.from==='ai'?'✓✓':''}</div>`;
       list.appendChild(el);
@@ -2282,13 +2282,13 @@
     list.innerHTML = '';
     const filtered = filter==='all' ? chatData : chatData.filter(c=>c.channel===filter);
     const badgeMap = {
-      whatsapp: { cls:'', label:'WhatsApp', icon:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.34A10 10 0 1 0 12 2zM16.6 14.1c-.3-.1-1.1-.5-1.3-.6-.1-.04-.2-.06-.3.06-.1.1-.4.5-.48.6-.08.1-.16.11-.3.04-.13-.07-.55-.2-.95-.6-.35-.31-.58-.7-.65-.82-.06-.12 0-.18.05-.24.04-.04.09-.1.13-.15.04-.05.06-.08.09-.14.03-.05.01-.1-.01-.14l-.28-.68c-.07-.17-.15-.15-.21-.15h-.17c-.06 0-.15.02-.23.11-.08.09-.3.29-.3.71s.31.82.35.88c.04.06.6.92 1.46 1.29.2.09.36.14.48.18.2.06.39.05.54.03.16-.02.49-.2.56-.39.07-.19.07-.35.05-.39-.02-.03-.08-.05-.16-.09z"></path></svg>` },
-      divar: { cls:'divar', label:'Divar', icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="8" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M12 9h5M12 12h5M12 15h3" stroke-linecap="round"></path></svg>` },
-      bale: { cls:'bale', label:'Bale', icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 4v8l-7 4-7-4V7z"></path><path d="M12 11l7-4M12 11v8M12 11l-7-4"></path></svg>` }
+      whatsapp: { cls:'', label:'واتساپ', icon:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.34A10 10 0 1 0 12 2zM16.6 14.1c-.3-.1-1.1-.5-1.3-.6-.1-.04-.2-.06-.3.06-.1.1-.4.5-.48.6-.08.1-.16.11-.3.04-.13-.07-.55-.2-.95-.6-.35-.31-.58-.7-.65-.82-.06-.12 0-.18.05-.24.04-.04.09-.1.13-.15.04-.05.06-.08.09-.14.03-.05.01-.1-.01-.14l-.28-.68c-.07-.17-.15-.15-.21-.15h-.17c-.06 0-.15.02-.23.11-.08.09-.3.29-.3.71s.31.82.35.88c.04.06.6.92 1.46 1.29.2.09.36.14.48.18.2.06.39.05.54.03.16-.02.49-.2.56-.39.07-.19.07-.35.05-.39-.02-.03-.08-.05-.16-.09z"></path></svg>` },
+      divar: { cls:'divar', label:'دیوار', icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="8" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M12 9h5M12 12h5M12 15h3" stroke-linecap="round"></path></svg>` },
+      bale: { cls:'bale', label:'بله', icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 4v8l-7 4-7-4V7z"></path><path d="M12 11l7-4M12 11v8M12 11l-7-4"></path></svg>` }
     };
     filtered.forEach((c,i)=>{
       const b = badgeMap[c.channel] || badgeMap.whatsapp;
-      const isAida = c.name === 'Aida Ahmadi';
+      const isAida = c.name === 'آیدا احمدی';
       const el = document.createElement('div');
       el.className = 'chat-item' + (c.selected ? ' selected' : '') + (isAida ? ' is-clickable' : '');
       el.style.animationDelay = (i*0.07)+'s';
@@ -2352,7 +2352,7 @@
     if (autoClickEnabled && !blankShown) {
       await wait(900);
       if (blankShown || !autoClickEnabled) return;
-      const aidaEl = [...document.querySelectorAll('#chatList .chat-item')].find(el=> el.querySelector('.chat-name')?.textContent.trim()==='Aida Ahmadi');
+      const aidaEl = [...document.querySelectorAll('#chatList .chat-item')].find(el=> el.querySelector('.chat-name')?.textContent.trim()==='آیدا احمدی');
       if (aidaEl && !blankShown) {
         aidaEl.style.transition='all 0.28s';
         aidaEl.style.boxShadow='0 0 0 2.5px #00e5ff, 0 8px 22px rgba(0,229,255,0.28)';
@@ -2449,7 +2449,7 @@
   }
 
   async function preloadAll() {
-    setSplashProgress(10, 'Loading fonts...');
+    setSplashProgress(10, 'بارگذاری فونت...');
     // 1. Fonts - now includes text scene 800 weight
     try {
       if (document.fonts) {
@@ -2460,7 +2460,7 @@
         await document.fonts.ready;
       }
     } catch(e) {}
-    setSplashProgress(35, 'Loading image...');
+    setSplashProgress(35, 'بارگذاری تصویر...');
 
     // 2. Cyberpunk background image
     await new Promise(resolve => {
@@ -2472,7 +2472,7 @@
       img.src = CYBER_BG_URL;
       setTimeout(finish, 2200);
     });
-    setSplashProgress(60, 'Preparing audio...');
+    setSplashProgress(60, 'آماده‌سازی صدا...');
 
     // 3. AudioContext warmup + silent buffer to unlock
     try {
@@ -2487,17 +2487,17 @@
       // warm filters
       audioCtx.createBiquadFilter();
     } catch(e) {}
-    setSplashProgress(85, 'Finalizing...');
+    setSplashProgress(85, 'نهایی‌سازی...');
 
     await new Promise(r => setTimeout(r, 280));
-    setSplashProgress(100, 'Ready!');
+    setSplashProgress(100, 'آماده!');
     await new Promise(r => setTimeout(r, 320));
 
     splashReady = true;
     const btn = document.getElementById('splashBtn');
     const status = document.getElementById('splashStatus');
     if (btn) btn.classList.add('show');
-    if (status) status.textContent = 'Ready - tap to start with sound';
+    if (status) status.textContent = 'آماده — برای شروع با صدا ضربه بزنید';
   }
 
   async function startFromSplash() {
@@ -2570,15 +2570,15 @@
     document.querySelectorAll('#textWords .tw').forEach(w=> w.classList.remove('show'));
     document.querySelectorAll('.f-card').forEach(c => { c.classList.remove('show'); c.classList.remove('active'); });
     // reset WA card texts
-    const waSub = document.getElementById('waSub'); if (waSub) waSub.textContent = 'Auto RAG reply';
-    const waDesc = document.getElementById('waDesc'); if (waDesc) waDesc.textContent = 'Direct connect, smart replies from your knowledge base, auto-save leads and numbers.';
-    const waArrow = document.getElementById('waArrow'); if (waArrow) { waArrow.textContent='→'; waArrow.style.background=''; waArrow.style.borderColor=''; waArrow.style.color=''; }
-    const divarSub = document.getElementById('divarSub'); if (divarSub) divarSub.textContent='Chat to customer';
-    const divarDesc = document.getElementById('divarDesc'); if (divarDesc) divarDesc.textContent='Manage Divar chats, capture leads, message campaigns and operator handoff.';
-    const divarArrow = document.getElementById('divarArrow'); if (divarArrow) divarArrow.textContent='→';
-    const baleSub = document.getElementById('baleSub'); if (baleSub) baleSub.textContent='Multiple operators';
-    const baleDesc = document.getElementById('baleDesc'); if (baleDesc) baleDesc.textContent='One inbox for all channels, multi-agent team, campaigns and full reports.';
-    const baleArrow = document.getElementById('baleArrow'); if (baleArrow) baleArrow.textContent='→';
+    const waSub = document.getElementById('waSub'); if (waSub) waSub.textContent = 'پاسخ خودکار RAG';
+    const waDesc = document.getElementById('waDesc'); if (waDesc) waDesc.textContent = 'اتصال مستقیم، پاسخ هوشمند از دانش شما، ذخیره خودکار لید و شماره.';
+    const waArrow = document.getElementById('waArrow'); if (waArrow) { waArrow.textContent='↗'; waArrow.style.background=''; waArrow.style.borderColor=''; waArrow.style.color=''; }
+    const divarSub = document.getElementById('divarSub'); if (divarSub) divarSub.textContent='چت → مشتری';
+    const divarDesc = document.getElementById('divarDesc'); if (divarDesc) divarDesc.textContent='مدیریت چت‌های دیوار، جذب لید، کمپین پیامکی و تحویل به اپراتور.';
+    const divarArrow = document.getElementById('divarArrow'); if (divarArrow) divarArrow.textContent='↗';
+    const baleSub = document.getElementById('baleSub'); if (baleSub) baleSub.textContent='اپراتورهای متعدد';
+    const baleDesc = document.getElementById('baleDesc'); if (baleDesc) baleDesc.textContent='یک صندوق برای همه کانال‌ها، تیم چندنفره، کمپین و گزارش کامل.';
+    const baleArrow = document.getElementById('baleArrow'); if (baleArrow) baleArrow.textContent='↗';
     document.getElementById('qrOverlay')?.classList.remove('show');
     document.getElementById('otpOverlay')?.classList.remove('show');
     [...Array(5)].forEach((_,i)=>{ const d=document.getElementById('otp'+i); if(d){ d.textContent=''; d.className='otp-digit'; } });
@@ -2866,8 +2866,8 @@
     waConnected = true;
     const card = document.getElementById('card1');
     card.classList.add('active');
-    document.getElementById('waSub').textContent = 'Connected • Active';
-    document.getElementById('waDesc').textContent = 'WhatsApp connected, auto-reply is active.';
+    document.getElementById('waSub').textContent = 'متصل • فعال';
+    document.getElementById('waDesc').textContent = 'واتساپ متصل شد، پاسخ خودکار فعال است.';
     document.getElementById('waArrow').textContent = '✓';
     document.getElementById('waArrow').style.background = '#25D366';
     // subtle pulse on card
@@ -2934,16 +2934,16 @@
     // customize per channel
     if (isDivar) {
       icon.className = 'otp-header-icon divar'; icon.textContent = 'D';
-      title.textContent = 'Connect Divar';
+      title.textContent = 'اتصال دیوار';
       phone.textContent = otpPhones.divar;
-      hint.textContent = '5-digit code sent to your number';
+      hint.textContent = 'کد ۵ رقمی به شماره شما ارسال شد';
       successIcon.className = 'otp-success-icon divar';
       successText.className = 'otp-success-text divar';
     } else {
       icon.className = 'otp-header-icon bale'; icon.textContent = '⬡';
-      title.textContent = 'Connect Bale';
+      title.textContent = 'اتصال بله';
       phone.textContent = otpPhones.bale;
-      hint.textContent = '5-digit code sent to your number';
+      hint.textContent = 'کد ۵ رقمی به شماره شما ارسال شد';
       successIcon.className = 'otp-success-icon bale';
       successText.className = 'otp-success-text bale';
     }
@@ -2981,8 +2981,8 @@
     const sub = document.getElementById(isDivar ? 'divarSub' : 'baleSub');
     const desc = document.getElementById(isDivar ? 'divarDesc' : 'baleDesc');
     const arrow = document.getElementById(isDivar ? 'divarArrow' : 'baleArrow');
-    sub.textContent = 'Connected • Active';
-    desc.textContent = isDivar ? 'Divar connected, chats are managed automatically.' : 'Bale connected, messages are active.';
+    sub.textContent = 'متصل • فعال';
+    desc.textContent = isDivar ? 'دیوار متصل شد، چت‌ها خودکار مدیریت می‌شن.' : 'بله متصل شد، پیام‌ها فعاله.';
     arrow.textContent = '✓';
     playConnectSuccess();
     checkAllConnectedAndShowText();
