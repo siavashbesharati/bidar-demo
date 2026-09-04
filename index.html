@@ -2,15 +2,18 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 <title>Google Search — 9:16 — bidar-app.ir</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-  html { direction: rtl; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { direction: rtl; height: 100%; }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { overscroll-behavior: none; }
   body {
     min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
     background: #0f0f0f;
     display: flex;
     flex-direction: column;
@@ -18,9 +21,16 @@
     justify-content: center;
     gap: 18px;
     padding: 28px 16px;
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
     font-family: 'Vazirmatn', sans-serif;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
     direction: rtl;
+    touch-action: manipulation;
+  }
+  button, .f-card, .chat-item, .kpi-card, .task-item, .coach-card, .search-box {
+    touch-action: manipulation;
+    cursor: pointer;
   }
   .header-label {
     display: flex; align-items: center; gap: 10px;
@@ -1220,12 +1230,16 @@
   .splash-percent { font-family: 'Vazirmatn', sans-serif; font-size: 10px; color: rgba(255,255,255,0.35); }
   .splash-btn {
     margin-top: 6px;
-    padding: 10px 22px; border-radius: 100px;
+    padding: 12px 26px; border-radius: 100px;
     background: #fff; color: #060a18; border: none;
-    font-family: 'Vazirmatn', sans-serif; font-size: 13px; font-weight: 700;
+    font-family: 'Vazirmatn', sans-serif; font-size: 14px; font-weight: 700;
     cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     display: none; align-items: center; gap: 6px;
     animation: btnPop 0.5s cubic-bezier(0.16,1,0.3,1);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
   }
   .splash-btn.show { display: inline-flex; }
   @keyframes btnPop { from { opacity: 0; transform: scale(0.9) translateY(6px); } to { opacity: 1; transform: scale(1) translateY(0); } }
@@ -1258,12 +1272,16 @@
   .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: center; }
   .controls button {
     font-family: 'Vazirmatn', sans-serif;
-    font-size: 11px; letter-spacing: 0.08em;
-    padding: 10px 16px; border-radius: 100px;
+    font-size: 12px; letter-spacing: 0.08em;
+    padding: 12px 22px; border-radius: 100px;
     border: 1px solid rgba(255,255,255,0.15);
     background: rgba(255,255,255,0.07);
     color: rgba(255,255,255,0.85);
     cursor: pointer; transition: all 0.2s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
   }
   .controls button:hover { background: rgba(255,255,255,0.12); color: white; }
   .controls button.primary { background: #4285f4; border-color: #4285f4; color: white; font-weight: 500; font-family: 'Vazirmatn', sans-serif; }
@@ -1288,7 +1306,7 @@
           <div class="splash-bar"><div class="splash-bar-fill" id="splashFill"></div></div>
           <div class="splash-status" id="splashStatus">در حال بارگذاری...</div>
           <div class="splash-percent" id="splashPercent">0%</div>
-          <button class="splash-btn" id="splashBtn" onclick="startFromSplash()">▶ شروع — با صدا</button>
+          <button class="splash-btn" id="splashBtn" type="button" onclick="startFromSplash()">▶ شروع — با صدا</button>
           <div class="splash-hint">برای فعال‌سازی صدا ضربه بزنید</div>
         </div>
       </div>
@@ -1736,13 +1754,9 @@
   </div>
 
   <div class="controls">
-    <span class="tag">1080x1920 • 9:16 • Google Spec</span>
-    <button class="primary" onclick="replay()">REPLAY TYPING</button>
-    <button onclick="openBidarPage()">OPEN iranexpedia.ir/bidar</button>
-    <button id="soundBtn" class="muted" onclick="toggleSound()" title="Toggle typing sound">SOUND ON</button>
-    <button id="autoBtn" onclick="toggleAuto()" title="Toggle auto-click" style="background: rgba(26,115,232,0.15); border-color: rgba(26,115,232,0.3); color: #8ab4f8;">AUTO: ON</button>
+    <button class="primary" id="replayBtn" type="button" onclick="replay()">REPLAY</button>
   </div>
-  <div class="sound-hint" id="soundHint">Sound needs one click to unlock (browser policy) — click REPLAY if muted</div>
+  <div class="sound-hint" id="soundHint">Tap START with sound on</div>
 
 <script>
   const text = "bidar-app.ir";
@@ -1764,10 +1778,20 @@
   let audioUnlocked = false;
 
   function ensureAudio() {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    if (audioCtx.state === 'suspended') audioCtx.resume();
+    try {
+      if (!audioCtx) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        audioCtx = new AC();
+      }
+      if (audioCtx.state === 'suspended') {
+        const p = audioCtx.resume();
+        if (p && p.catch) p.catch(()=>{});
+      }
+    } catch(e) {}
     audioUnlocked = true;
-    document.getElementById('soundHint').style.display = 'none';
+    const hint = document.getElementById('soundHint');
+    if (hint) hint.style.display = 'none';
   }
 
   function playKeySound(variant) {
@@ -1836,16 +1860,20 @@
   function toggleSound() {
     soundOn = !soundOn;
     const btn = document.getElementById('soundBtn');
-    btn.textContent = soundOn ? 'SOUND ON' : 'SOUND OFF';
-    btn.classList.toggle('off', !soundOn);
+    if (btn) {
+      btn.textContent = soundOn ? 'SOUND ON' : 'SOUND OFF';
+      btn.classList.toggle('off', !soundOn);
+    }
     if (soundOn) ensureAudio();
   }
 
   function toggleAuto() {
     autoClickEnabled = !autoClickEnabled;
     const btn = document.getElementById('autoBtn');
-    btn.textContent = autoClickEnabled ? 'AUTO: ON' : 'AUTO: OFF';
-    btn.style.opacity = autoClickEnabled ? '1' : '0.5';
+    if (btn) {
+      btn.textContent = autoClickEnabled ? 'AUTO: ON' : 'AUTO: OFF';
+      btn.style.opacity = autoClickEnabled ? '1' : '0.5';
+    }
     // if turned ON while cards are visible and not yet connected, start auto play
     if (autoClickEnabled) {
       const cardsView = document.getElementById('cardsView');
@@ -1861,9 +1889,15 @@
     }
   }
 
-  // unlock on first user gesture
-  ['click','keydown','touchstart'].forEach(ev => {
-    window.addEventListener(ev, () => { if (!audioUnlocked) ensureAudio(); }, { once: true });
+  // unlock on first user gesture (mouse + touch + Safari)
+  ['click','keydown','touchstart','touchend','pointerup'].forEach(ev => {
+    window.addEventListener(ev, () => { if (!audioUnlocked) ensureAudio(); }, { once: true, passive: true });
+  });
+  // iOS Safari: resume on every touch (suspended policy)
+  ['touchend','pointerup'].forEach(ev => {
+    window.addEventListener(ev, () => {
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    }, { passive: true });
   });
 
   // === Chat scene data - diverse real messages per channel ===
