@@ -1688,7 +1688,6 @@
           </div>
           <span class="material-icons" style="font-size:18px;color:#5f6368;">auto_awesome</span>
         </div>
-        <div id="coachThinkingLine" class="thinking-line"><span style="width:6px;height:6px;border-radius:50%;background:#7b5cff;box-shadow:0 0 6px #7b5cff;display:inline-block;flex-shrink:0;"></span><span id="thinkingText" class="thinking-text">میوژن در حال فکر کردن...</span></div>
         <div class="coach-answer-body" id="coachAnswerBody">
           <div class="answer-bubble" id="coachBubble">بر اساس رفتار ۴۸ ساعت اخیر و تحلیل پیام‌ها، این ۳ لید بیشترین احتمال خرید رو دارن.</div>
           <div class="lead-rank" id="lead1"><span class="lead-rank-num top">1</span><div class="lead-rank-main"><div class="lead-rank-name">فاطمه فلاحی • تخفیف خواست</div><div class="lead-rank-meta">دیوار • پرسید تخفیف داره؟</div><div class="lead-rank-bar"><div class="lead-rank-fill high" style="width:91%"></div></div></div><span class="lead-rank-score">91%</span></div>
@@ -2065,23 +2064,32 @@
     userYes.style.display='block'; requestAnimationFrame(()=> userYes.classList.add('show'));
     if(soundOn&&audioCtx){ for(let k=0;k<3;k++) setTimeout(()=>{ const t=audioCtx.currentTime; const o=audioCtx.createOscillator(), g=audioCtx.createGain(); o.frequency.value=720; g.gain.setValueAtTime(0.07,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.13); o.connect(g); g.connect(audioCtx.destination); o.start(t); o.stop(t+0.14); }, k*100); }
     await wait(800);
-    // AI thinking - same line at top, sentences cycle
-    const thinkingLine = document.getElementById('coachThinkingLine');
-    const thinkingText = document.getElementById('thinkingText');
+    // AI thinking - in-flow bubble instead of typing, sentences cycle in same bubble
+    const ansBodyThink = document.getElementById('coachAnswerBody');
     const sentences = ["میوژن در حال فکر کردن...", "در حال ساخت کمپین...", "۲۴۸ لید پیدا شد — در حال بررسی..."];
-    thinkingLine.classList.add('show'); thinkingLine.style.display='flex';
+    const thinkBubble = document.createElement('div');
+    thinkBubble.className = 'answer-bubble';
+    thinkBubble.style.background = '#f3f0ff';
+    thinkBubble.style.border = '1px solid #d6c8ff';
+    thinkBubble.style.fontStyle = 'italic';
+    thinkBubble.style.opacity = '1';
+    thinkBubble.style.transform = 'none';
+    ansBodyThink.appendChild(thinkBubble);
+    scrollCoachBottom();
     for(let s=0; s<sentences.length; s++){
-      thinkingText.textContent = sentences[s];
-      thinkingText.classList.remove('out'); thinkingText.classList.add('in');
+      thinkBubble.textContent = sentences[s];
+      thinkBubble.style.transition = 'opacity 0.3s ease';
+      thinkBubble.style.opacity = '1';
       if(soundOn&&audioCtx){ const t=audioCtx.currentTime; const o=audioCtx.createOscillator(), g=audioCtx.createGain(); o.frequency.value=420+s*40; g.gain.setValueAtTime(0.05,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.5); o.connect(g); g.connect(audioCtx.destination); o.start(t); o.stop(t+0.52); }
+      scrollCoachBottom();
       await wait(900);
       if(s < sentences.length-1){
-        thinkingText.classList.remove('in'); thinkingText.classList.add('out');
-        await wait(320);
+        thinkBubble.style.opacity = '0';
+        await wait(300);
       }
     }
     await wait(300);
-    thinkingLine.style.display='none'; thinkingLine.classList.remove('show');
+    thinkBubble.remove();
     const found = document.getElementById('coachFound');
     found.style.display='block'; requestAnimationFrame(()=> found.classList.add('show'));
     if(soundOn&&audioCtx){ const t=audioCtx.currentTime; const o=audioCtx.createOscillator(), g=audioCtx.createGain(); o.frequency.value=640; g.gain.setValueAtTime(0.08,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.3); o.connect(g); g.connect(audioCtx.destination); o.start(t); o.stop(t+0.31); }
