@@ -300,32 +300,42 @@
   .results.show { display: flex; animation: fadeIn 0.35s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   .results-header {
-    display: flex; align-items: center; gap: 12px;
-    padding: 8px 14px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 10px;
     border-bottom: 1px solid #dadce0;
     position: sticky; top: 0; background: white; z-index: 2;
-    height: 56px;
+    min-height: 52px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   }
+  .results-header .logo.small { font-size: 18px; flex-shrink: 0; }
   .results-search-box {
     flex: 1;
-    height: 38px;
+    min-width: 0;
+    height: 36px;
     border: 1px solid #dfe1e5;
-    border-radius: 19px;
+    border-radius: 18px;
     display: flex; align-items: center;
-    padding: 0 6px 0 12px; gap: 6px;
+    padding: 0 4px 0 10px; gap: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-    font-size: 14px; color: #202124;
+    font-size: 12.5px; color: #202124;
     font-family: 'Vazirmatn', sans-serif;
     direction: rtl;
+    overflow: hidden;
   }
-  .results-search-box .typed { flex: 1; font-size: 14px; }
+  .results-search-box .typed {
+    flex: 1; min-width: 0;
+    font-size: 12.5px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    direction: ltr; text-align: left;
+  }
   .results-stats { padding: 10px 16px 8px; font-size: 12px; color: #70757a; line-height: 16px; }
   .result-item { padding: 12px 16px 14px; direction: rtl; text-align: right; }
   .result-url {
-    font-size: 12px; color: #202124; line-height: 18px;
+    font-size: 11.5px; color: #202124; line-height: 18px;
     display: flex; align-items: center; gap: 8px;
     margin-bottom: 5px; font-family: 'Vazirmatn', sans-serif;
+    min-width: 0; overflow: hidden;
+    white-space: nowrap; text-overflow: ellipsis;
   }
   .result-favicon {
     width: 24px; height: 24px; border-radius: 50%;
@@ -1404,18 +1414,18 @@
         <div class="results-header">
           <div class="logo small" aria-label="Google"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
           <div class="results-search-box">
-            <span style="display:grid;place-items:center;width:20px;height:20px;flex-shrink:0;"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="#9aa0a6" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span>
+            <span style="display:grid;place-items:center;width:18px;height:18px;flex-shrink:0;"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="#9aa0a6" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span>
             <span class="typed">bidar-app.ir</span>
-            <span style="display:grid;place-items:center;width:32px;height:32px;border-radius:50%;flex-shrink:0;"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="#70757a" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span>
-            <span style="width:1px;height:22px;background:#dadce0;flex-shrink:0;"></span>
-            <span style="display:grid;place-items:center;width:32px;height:32px;flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="#4285f4" d="M12 14a3.5 3.5 0 0 0 3.5-3.5V5.5A3.5 3.5 0 0 0 12 2a3.5 3.5 0 0 0-3.5 3.5v5A3.5 3.5 0 0 0 12 14z"></path><path fill="#34a853" d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path></svg></span>
-            <span style="display:grid;place-items:center;width:32px;height:32px;flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22"><g fill="none" stroke-width="1.2"><path fill="#4285f4" d="M4 4h5v2H6v3H4z M20 4h-5v2h3v3h2z M4 20h5v-2H6v-3H4z M20 20h-5v-2h3v-3h2z" stroke="none"></path><circle cx="12" cy="12" r="3.2" stroke="#4285f4" fill="none"></circle><circle cx="12" cy="12" r="1.1" fill="#4285f4" stroke="none"></circle></g></svg></span>
+            <span style="display:grid;place-items:center;width:26px;height:26px;border-radius:50%;flex-shrink:0;"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="#70757a" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span>
+            <span style="width:1px;height:20px;background:#dadce0;flex-shrink:0;"></span>
+            <span style="display:grid;place-items:center;width:26px;height:26px;flex-shrink:0;"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285f4" d="M12 14a3.5 3.5 0 0 0 3.5-3.5V5.5A3.5 3.5 0 0 0 12 2a3.5 3.5 0 0 0-3.5 3.5v5A3.5 3.5 0 0 0 12 14z"></path><path fill="#34a853" d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path></svg></span>
+            <span style="display:grid;place-items:center;width:26px;height:26px;flex-shrink:0;"><svg viewBox="0 0 24 24" width="18" height="18"><g fill="none" stroke-width="1.2"><path fill="#4285f4" d="M4 4h5v2H6v3H4z M20 4h-5v2h3v3h2z M4 20h5v-2H6v-3H4z M20 20h-5v-2h3v-3h2z" stroke="none"></path><circle cx="12" cy="12" r="3.2" stroke="#4285f4" fill="none"></circle><circle cx="12" cy="12" r="1.1" fill="#4285f4" stroke="none"></circle></g></svg></span>
           </div>
         </div>
         <div class="results-stats">حدود ۱٬۲۴۰ نتیجه (۰٫۳۲ ثانیه)</div>
 
         <div class="result-item" id="bidarResult" style="cursor:pointer;" onclick="clickBidarResult()">
-          <div class="result-url"><span class="result-favicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#e8f0fe"></circle><text x="12" y="15.5" text-anchor="middle" font-size="11" font-family="Vazirmatn" fill="#1a73e8">B</text></svg></span> https://www.iranexpedia.ir/bidar#channels</div>
+          <div class="result-url"><span class="result-favicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#e8f0fe"></circle><text x="12" y="15.5" text-anchor="middle" font-size="11" font-family="Vazirmatn" fill="#1a73e8">B</text></svg></span> https://bidar-app.ir</div>
           <div class="result-title" style="cursor:pointer;">بیدار</div>
           <div class="result-desc" style="color:#4d5156;">
             <span style="color:#202124; font-weight:700;">CRM بیدار؛ چت‌ها را به مشتری تبدیل کنید</span><br>
