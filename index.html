@@ -1000,6 +1000,72 @@
   .thinking-text { transition: opacity 0.32s ease, transform 0.32s ease; display: inline-block; }
   .thinking-text.out { opacity: 0; transform: translateY(-6px); }
   .thinking-text.in { opacity: 1; transform: translateY(0); }
+  /* Campaign running */
+  .camp-scene {
+    position: absolute; inset: 0;
+    display: none; flex-direction: column;
+    background: #060a18;
+    overflow: hidden; isolation: isolate;
+    direction: rtl;
+  }
+  .camp-scene.show { display: flex; animation: fadeIn 0.45s ease; }
+  .camp-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 85% 50% at 50% 0%, rgba(37,211,102,0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 100% 100%, rgba(0,229,255,0.16) 0%, transparent 55%),
+      linear-gradient(180deg, #0a0f2e 0%, #060a1a 100%);
+    z-index: 0;
+  }
+  .camp-header {
+    position: relative; z-index: 2;
+    padding: 16px 16px 10px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .camp-title { font-family: 'Vazirmatn', sans-serif; font-size: 13px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .camp-live { display: inline-flex; align-items: center; gap: 5px; background: rgba(37,211,102,0.14); border: 1px solid rgba(37,211,102,0.35); color: #25D366; font-size: 9px; font-weight: 700; padding: 3px 9px; border-radius: 100px; }
+  .camp-live i { width: 6px; height: 6px; border-radius: 50%; background: #25D366; box-shadow: 0 0 6px #25D366; animation: pulseDot 1.2s infinite; font-style: normal; }
+  .camp-body { position: relative; z-index: 2; flex: 1; overflow-y: auto; padding: 4px 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+  .camp-hero {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 18px; padding: 14px;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    opacity: 0; transform: translateY(10px);
+  }
+  .camp-hero.show { animation: kpiIn 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .camp-hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .camp-hero-label { font-family: 'Vazirmatn', sans-serif; font-size: 11px; color: rgba(255,255,255,0.6); }
+  .camp-hero-pct { font-family: 'Vazirmatn', sans-serif; font-size: 20px; font-weight: 800; color: #fff; }
+  .camp-progress { height: 8px; background: rgba(255,255,255,0.10); border-radius: 10px; overflow: hidden; }
+  .camp-progress-fill { height: 100%; width: 0%; border-radius: 10px; background: linear-gradient(90deg,#25D366,#00e5ff); box-shadow: 0 0 10px rgba(37,211,102,0.5); transition: width 0.4s ease; }
+  .camp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .camp-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 14px; padding: 10px;
+    opacity: 0; transform: translateY(10px);
+  }
+  .camp-stat.show { animation: kpiIn 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .camp-stat-val { font-family: 'Vazirmatn', sans-serif; font-size: 19px; font-weight: 800; color: #fff; line-height: 1; }
+  .camp-stat-label { font-family: 'Vazirmatn', sans-serif; font-size: 10px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+  .camp-channels { display: flex; flex-direction: column; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 12px; opacity: 0; transform: translateY(10px); }
+  .camp-channels.show { animation: kpiIn 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .camp-ch-row { display: flex; align-items: center; gap: 8px; font-family: 'Vazirmatn', sans-serif; font-size: 10px; color: rgba(255,255,255,0.7); }
+  .camp-ch-name { width: 44px; flex-shrink: 0; }
+  .camp-ch-bar { flex: 1; height: 6px; background: rgba(255,255,255,0.10); border-radius: 10px; overflow: hidden; }
+  .camp-ch-fill { height: 100%; width: 0%; border-radius: 10px; transition: width 0.5s ease; }
+  .camp-ch-count { width: 52px; text-align: left; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .camp-log { display: flex; flex-direction: column; gap: 6px; }
+  .camp-log-item {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 8px 10px;
+    font-family: 'Vazirmatn', sans-serif; font-size: 10.5px; color: rgba(255,255,255,0.75);
+    opacity: 0; transform: translateY(8px);
+  }
+  .camp-log-item.show { animation: kpiIn 0.38s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .camp-log-item .tick { width: 18px; height: 18px; border-radius: 50%; background: #25D366; color: #fff; font-size: 10px; display: grid; place-items: center; flex-shrink: 0; }
   .answer-bubble {
     background: #fff; border: 1px solid #e8eaed; border-radius: 14px;
     padding: 12px; font-family: 'Vazirmatn', sans-serif; font-size: 11.5px; line-height: 1.6; color: #202124;
@@ -1749,6 +1815,32 @@
           </div>
         </div>
       </div>
+      <!-- CAMPAIGN RUNNING - live sending + stats -->
+      <div class="camp-scene" id="campScene" onclick="if(event.target===this) replay()">
+        <div class="camp-bg"></div>
+        <div class="camp-header">
+          <div class="camp-title"><span style="width:7px;height:7px;border-radius:50%;background:#25D366;box-shadow:0 0 8px #25D366;display:inline-block;"></span> کمپین تور مالزی</div>
+          <span class="camp-live"><i></i> در حال ارسال</span>
+        </div>
+        <div class="camp-body">
+          <div class="camp-hero" id="campHero">
+            <div class="camp-hero-top"><span class="camp-hero-label">ارسال پیام به ۲۴۸ لید</span><span class="camp-hero-pct" id="campPct">۰٪</span></div>
+            <div class="camp-progress"><div class="camp-progress-fill" id="campProgress"></div></div>
+          </div>
+          <div class="camp-stats">
+            <div class="camp-stat" id="campStatSent"><div class="camp-stat-val" id="campSent">۰</div><div class="camp-stat-label">ارسال شده</div></div>
+            <div class="camp-stat" id="campStatRead"><div class="camp-stat-val" id="campRead">۰</div><div class="camp-stat-label">خوانده شده</div></div>
+            <div class="camp-stat" id="campStatReply"><div class="camp-stat-val" id="campReply">۰</div><div class="camp-stat-label">پاسخ داده</div></div>
+            <div class="camp-stat" id="campStatOrder"><div class="camp-stat-val" id="campOrder">۰</div><div class="camp-stat-label">سفارش ثبت شده</div></div>
+          </div>
+          <div class="camp-channels" id="campChannels">
+            <div class="camp-ch-row"><span class="camp-ch-name">واتساپ</span><div class="camp-ch-bar"><div class="camp-ch-fill" id="campWaFill" style="background:linear-gradient(90deg,#25D366,#00e5ff);"></div></div><span class="camp-ch-count" id="campWaCount">۰/۱۴۲</span></div>
+            <div class="camp-ch-row"><span class="camp-ch-name">بله</span><div class="camp-ch-bar"><div class="camp-ch-fill" id="campBaleFill" style="background:linear-gradient(90deg,#00e5ff,#7b5cff);"></div></div><span class="camp-ch-count" id="campBaleCount">۰/۸۱</span></div>
+            <div class="camp-ch-row"><span class="camp-ch-name">دیوار</span><div class="camp-ch-bar"><div class="camp-ch-fill" id="campDivarFill" style="background:linear-gradient(90deg,#ff7a00,#ff2e63);"></div></div><span class="camp-ch-count" id="campDivarCount">۰/۲۵</span></div>
+          </div>
+          <div class="camp-log" id="campLog"></div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -2130,11 +2222,90 @@
     await wait(1100);
     const done = document.getElementById('coachCampaignDone');
     done.style.display='block'; requestAnimationFrame(()=> done.classList.add('show'));
+    done.style.cursor='pointer'; done.onclick = ()=> showCampScene();
     done.querySelectorAll('[id^="plat"]')?.forEach(()=>{}); // bars already animated
     if(soundOn&&audioCtx){ const t=audioCtx.currentTime; [523,659,784].forEach((f,i)=>{ setTimeout(()=>{ const tt=audioCtx.currentTime; const oo=audioCtx.createOscillator(), gg=audioCtx.createGain(); oo.frequency.value=f; gg.gain.setValueAtTime(0.12,tt); gg.gain.exponentialRampToValueAtTime(0.001,tt+0.4); oo.connect(gg); gg.connect(audioCtx.destination); oo.start(tt); oo.stop(tt+0.42); }, i*120); }); }
     // smooth stick to bottom - vertical slide
     const body = document.getElementById('coachAnswerBody');
     if(body) body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
+    // auto go to live campaign scene
+    if (autoClickEnabled) { await wait(1600); await showCampScene(); }
+  }
+  let campBusy = false;
+  async function showCampScene() {
+    const coachAns = document.getElementById('coachAnswer');
+    const camp = document.getElementById('campScene');
+    if (!camp || camp.classList.contains('show') || campBusy) return;
+    campBusy = true;
+    ensureAudio(); playClickSound();
+    if (coachAns && coachAns.classList.contains('show')) { coachAns.style.transition='opacity 0.32s'; coachAns.style.opacity='0'; await wait(320); coachAns.classList.remove('show'); coachAns.style.display='none'; coachAns.style.opacity=''; }
+    const coach = document.getElementById('coachScene');
+    if (coach && coach.classList.contains('show')) { coach.style.display='none'; coach.classList.remove('show'); }
+    camp.classList.add('show'); camp.style.display='flex';
+    // reset
+    document.getElementById('campHero')?.classList.remove('show');
+    document.querySelectorAll('.camp-stat').forEach(s=>s.classList.remove('show'));
+    document.getElementById('campChannels')?.classList.remove('show');
+    document.getElementById('campLog').innerHTML='';
+    document.getElementById('campProgress').style.width='0%';
+    await wait(150);
+    document.getElementById('campHero')?.classList.add('show');
+    playResultSound();
+    await wait(200);
+    document.querySelectorAll('.camp-stat').forEach((s,i)=> setTimeout(()=>{ s.classList.add('show'); playChatTick(i); }, i*130));
+    await wait(500);
+    document.getElementById('campChannels')?.classList.add('show');
+    playResultSound();
+    // animate sending 0 -> 248 with stats
+    const total = 248, waT = 142, baleT = 81, divT = 25;
+    const steps = 26;
+    let step = 0;
+    const logLines = [
+      'اتصال به واتساپ بیزینس...',
+      'ارسال دسته اول به ۵۰ لید...',
+      'نرخ خوانده شدن ۸۶٪ — عالیه...',
+      'اولین پاسخ‌ها رسید — ۱۲ لید جواب دادن...',
+      'ارسال به بله — ۸۱ مخاطب...',
+      'دیوار — پیام معرفی تور مالزی...',
+      '۴۰ سفارش ثبت شد — کمپین داغه...'
+    ];
+    const logEl = document.getElementById('campLog');
+    let logIdx = 0;
+    await new Promise(resolve => {
+      const iv = setInterval(()=>{
+        step++;
+        const sent = Math.min(total, Math.round(total * step / steps));
+        const wa = Math.min(waT, Math.round(waT * step / steps));
+        const bale = Math.min(baleT, Math.round(baleT * step / steps));
+        const dv = Math.min(divT, Math.round(divT * step / steps));
+        const read = Math.round(sent * 0.86);
+        const reply = Math.round(sent * 0.21);
+        const order = Math.round(sent * 0.09);
+        document.getElementById('campSent').textContent = sent;
+        document.getElementById('campRead').textContent = read;
+        document.getElementById('campReply').textContent = reply;
+        document.getElementById('campOrder').textContent = order;
+        document.getElementById('campPct').textContent = Math.round(sent/total*100) + '٪';
+        document.getElementById('campProgress').style.width = (sent/total*100) + '%';
+        document.getElementById('campWaFill').style.width = (wa/waT*100) + '%';
+        document.getElementById('campBaleFill').style.width = (bale/baleT*100) + '%';
+        document.getElementById('campDivarFill').style.width = (dv/divT*100) + '%';
+        document.getElementById('campWaCount').textContent = wa + '/' + waT;
+        document.getElementById('campBaleCount').textContent = bale + '/' + baleT;
+        document.getElementById('campDivarCount').textContent = dv + '/' + divT;
+        if (step % 4 === 0 || step === steps) playChatTick(step % 5);
+        if ((step % 4 === 1 || step === steps) && logIdx < logLines.length) {
+          const item = document.createElement('div');
+          item.className = 'camp-log-item';
+          item.innerHTML = '<span class="tick">✓</span>' + logLines[logIdx++];
+          logEl.appendChild(item);
+          requestAnimationFrame(()=> item.classList.add('show'));
+        }
+        if (step >= steps) { clearInterval(iv); resolve(); }
+      }, 160);
+    });
+    playConnectSuccess();
+    campBusy = false;
   }
   async function showCoachScene() {
     const agent = document.getElementById('agentScene');
@@ -2602,6 +2773,8 @@
     if (coach2) { coach2.classList.remove('show'); coach2.style.display=""; coach2.style.opacity=""; coach2.querySelectorAll('.coach-card').forEach(c=>c.classList.remove('show')); document.getElementById('coachPrompt')?.classList.remove('show'); }
     const coachAns2 = document.getElementById('coachAnswer');
     if (coachAns2) { coachAns2.classList.remove('show'); coachAns2.style.display=""; coachAns2.style.opacity=""; }
+    const camp2 = document.getElementById('campScene');
+    if (camp2) { camp2.classList.remove('show'); camp2.style.display=""; camp2.style.opacity=""; const cl=document.getElementById('campLog'); if(cl) cl.innerHTML=""; campBusy=false; }
     const dashScene = document.getElementById('dashScene');
     if (dashScene) { dashScene.classList.remove('show'); dashScene.style.display=""; dashScene.style.opacity=""; document.querySelectorAll('.kpi-card').forEach(c=>c.classList.remove('show')); document.querySelectorAll('.chart-card').forEach(c=>c.classList.remove('show')); const d=document.getElementById('donut'); if(d) d.classList.remove('show'); }
     blankShown = false;
