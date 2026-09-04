@@ -1308,9 +1308,14 @@
     user-select: none;
     -webkit-user-select: none;
   }
-  .splash-btn.show { display: inline-flex; }
+  .splash-btn.show { display: inline-flex; animation: btnPop 0.5s cubic-bezier(0.16,1,0.3,1), splashPulse 1.6s ease-in-out 0.6s infinite; }
   @keyframes btnPop { from { opacity: 0; transform: scale(0.9) translateY(6px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  @keyframes splashPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.25), 0 0 0 0 rgba(0,229,255,0.45); }
+    50% { box-shadow: 0 4px 20px rgba(0,0,0,0.25), 0 0 0 10px rgba(0,229,255,0); }
+  }
   .splash-hint { font-family: 'Vazirmatn', sans-serif; font-size: 10px; color: rgba(255,255,255,0.28); margin-top: 2px; }
+  .splash-hint.ready { color: #00e5ff; font-size: 11px; font-weight: 700; }
 
   .result-title:visited { color: #681da8; }
   .result-title:hover { text-decoration: underline; }
@@ -1364,15 +1369,15 @@
   <div class="canvas-wrap" id="canvasWrap">
     <div class="canvas" id="canvas">
                               <!-- Splash preloader - preloads fonts, image, audio -->
-      <div class="splash" id="splash">
+      <div class="splash" id="splash" onclick="startFromSplash()">
         <div class="splash-bg"></div>
         <div class="splash-content">
           <div class="splash-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
           <div class="splash-bar"><div class="splash-bar-fill" id="splashFill"></div></div>
           <div class="splash-status" id="splashStatus">در حال بارگذاری...</div>
           <div class="splash-percent" id="splashPercent">0%</div>
-          <button class="splash-btn" id="splashBtn" type="button" onclick="startFromSplash()">▶ شروع — با صدا</button>
-          <div class="splash-hint">برای فعال‌سازی صدا ضربه بزنید</div>
+          <button class="splash-btn" id="splashBtn" type="button" onclick="event.stopPropagation(); startFromSplash()">▶ شروع — با صدا</button>
+          <div class="splash-hint" id="splashHint">آماده‌سازی... لطفاً صبر کنید</div>
         </div>
       </div>
 
@@ -2660,21 +2665,49 @@
     if (msg && status) status.textContent = msg;
   }
 
+  function finishPreloadUI() {
+    if (splashReady) return;
+    splashReady = true;
+    setSplashProgress(100, 'آماده!');
+    const btn = document.getElementById('splashBtn');
+    const status = document.getElementById('splashStatus');
+    const hint = document.getElementById('splashHint');
+    if (btn) btn.classList.add('show');
+    if (status) status.textContent = 'آماده شد ✓';
+    if (hint) {
+      hint.textContent = '👆 برای شروع با صدا، روی دکمه شروع بزنید';
+      hint.classList.add('ready');
+    }
+  }
+
   async function preloadAll() {
-    setSplashProgress(10, 'بارگذاری فونت...');
+    // safety: never trap user on loading — force ready after 7s
+    setTimeout(()=> { if (!splashReady) finishPreloadUI(); }, 7000);
+    setSplashProgress(5, 'بارگذاری فونت...');
     // 1. Fonts - now includes text scene 800 weight
     try {
       if (document.fonts) {
-        await document.fonts.load('400 16px Vazirmatn');
-        await document.fonts.load('700 22px Vazirmatn');
-        await document.fonts.load('800 26px Vazirmatn');
-        await document.fonts.load('800 22px Vazirmatn');
-        await document.fonts.ready;
+        const fontTimeout = new Promise(r => setTimeout(r, 2500));
+        await Promise.race([
+          (async () => {
+            await document.fonts.load('400 16px Vazirmatn');
+            setSplashProgress(16, 'بارگذاری فونت...');
+            await document.fonts.load('700 22px Vazirmatn');
+            setSplashProgress(24, 'بارگذاری فونت...');
+            await document.fonts.load('800 26px Vazirmatn');
+            await document.fonts.load('800 22px Vazirmatn');
+            await document.fonts.ready;
+          })(),
+          fontTimeout
+        ]);
       }
     } catch(e) {}
     setSplashProgress(35, 'بارگذاری تصویر...');
 
-    // 2. Cyberpunk background image
+    // 2. Cyberpunk background image (smooth intermediate ticks while waiting)
+    const imgTick = setInterval(()=> {
+      if (splashProgress < 55) setSplashProgress(splashProgress + 4);
+    }, 300);
     await new Promise(resolve => {
       const img = new Image();
       let done = false;
@@ -2684,6 +2717,7 @@
       img.src = CYBER_BG_URL;
       setTimeout(finish, 2200);
     });
+    clearInterval(imgTick);
     setSplashProgress(60, 'آماده‌سازی صدا...');
 
     // 3. AudioContext warmup + silent buffer to unlock
@@ -2702,17 +2736,22 @@
     setSplashProgress(85, 'نهایی‌سازی...');
 
     await new Promise(r => setTimeout(r, 280));
-    setSplashProgress(100, 'آماده!');
-    await new Promise(r => setTimeout(r, 320));
+    setSplashProgress(96, 'نهایی‌سازی...');
+    await new Promise(r => setTimeout(r, 220));
 
-    splashReady = true;
-    const btn = document.getElementById('splashBtn');
-    const status = document.getElementById('splashStatus');
-    if (btn) btn.classList.add('show');
-    if (status) status.textContent = 'آماده — برای شروع با صدا ضربه بزنید';
+    finishPreloadUI();
   }
 
+  let splashStarted = false;
   async function startFromSplash() {
+    if (splashStarted) return;
+    // if tapped before preload finished, nudge the bar and wait
+    if (!splashReady) {
+      const status = document.getElementById('splashStatus');
+      if (status) status.textContent = 'کمی صبر کنید...';
+      return;
+    }
+    splashStarted = true;
     ensureAudio();
     // play tiny confirm tick
     try { playKeySound(0); } catch(e) {}
@@ -2722,7 +2761,8 @@
       // keep splash in DOM for replay but hidden
       setTimeout(() => { splash.style.display = 'none'; }, 500);
     }
-    document.getElementById('soundHint').style.display = 'none';
+    const hint = document.getElementById('soundHint');
+    if (hint) hint.style.display = 'none';
     // start typing
     await wait(220);
     typeText();
